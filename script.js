@@ -19,15 +19,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const diffX = startX - currentX;
     const diffY = currentY - startY;
 
+    // Determine if this is a horizontal swipe
     if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > swipeThreshold) {
       event.preventDefault(); // Prevent default scrolling behavior
 
-      if (diffX > 0) {
+      if (diffX > 0 && currentIndex < sections.length - 1) {
         // Swipe left (next section)
-        currentIndex = (currentIndex + 1) % sections.length;
-      } else {
+        currentIndex++;
+      } else if (diffX < 0 && currentIndex > 0) {
         // Swipe right (previous section)
-        currentIndex = (currentIndex - 1 + sections.length) % sections.length;
+        currentIndex--;
+      } else {
+        // If at the edge, do nothing
+        return;
       }
 
       isScrolling = true; // Set scrolling flag
@@ -37,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       transformActiveSection();
-      
+
       setTimeout(() => {
         isScrolling = false; // Reset scrolling flag after animation
       }, 800);
