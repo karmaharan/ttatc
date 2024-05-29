@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const currentX = event.touches[0].clientX;
       const currentY = event.touches[0].clientY;
-      const diffX = currentX - startX;
+      const diffX = startX - currentX;
       const diffY = currentY - startY;
 
       if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > swipeThreshold) {
@@ -33,14 +33,10 @@ document.addEventListener('DOMContentLoaded', () => {
         // Swipe direction based on diffX
         if (diffX > 0) {
           // Swipe right (next section)
-          if (currentIndex < sections.length - 1) {
-            currentIndex++;
-          }
+          currentIndex = (currentIndex + 1) % sections.length;
         } else {
           // Swipe left (previous section)
-          if (currentIndex > 0) {
-            currentIndex--;
-          }
+          currentIndex = (currentIndex - 1 + sections.length) % sections.length;
         }
 
         sections[currentIndex].scrollIntoView({
