@@ -58,7 +58,7 @@ body, html {
 }
 
 /* Media queries */
-/* @media (max-width: 768px) {
+@media (max-width: 768px) {
   body, html {
     overflow: auto;
   }
@@ -74,4 +74,4 @@ body, html {
     height: 100vh;
     scroll-snap-align: start;
   }
-} */
+}
