@@ -1,68 +1,66 @@
 body, html {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
 }
 
 .container {
-    display: flex;
-    height: 100vh;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
+  display: flex;
+  height: 100vh;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
 }
 
 .section {
-    flex: 0 0 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    scroll-snap-align: center;
-    padding: 20px;
-    transition: transform 0.3s ease-out; /* Transition for transform effect */
+  flex: 0 0 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  scroll-snap-align: center;
+  padding: 20px;
+  transition: transform 0.3s ease-out; /* Transition for transform effect */
 }
 
-
 .section.left {
-    background-color: #f8b400;
+  background-color: #f8b400;
 }
 
 .section.middle {
-    background-color: #34a853;
+  background-color: #34a853;
 }
 
 .section.right {
-    background-color: #4285f4;
+  background-color: #4285f4;
 }
-
 
 /* Unique animations */
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .section h2 {
-    animation: fadeIn 2s;
+  animation: fadeIn 2s;
 }
 
 /* Media queries */
-@media (max-width: 768px) {
-    body, html {
-        overflow: auto;
-    }
-    
-    .container {
-        flex-direction: column;
-        height: auto;
-        scroll-snap-type: y mandatory; /* Adjusted for vertical scrolling */
-    }
+/* @media (max-width: 768px) {
+  body, html {
+    overflow: auto;
+  }
 
-    .section {
-        flex: 0 0 auto;
-        height: 100vh;
-        scroll-snap-align: start;
-    }
-}
+  .container {
+    flex-direction: column;
+    height: auto;
+    scroll-snap-type: y mandatory; /* Adjusted for vertical scrolling *\/
+  }
+
+  .section {
+    flex: 0 0 auto;
+    height: 100vh;
+    scroll-snap-align: start;
+  }
+} */
