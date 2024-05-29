@@ -3,6 +3,7 @@ body, html {
   padding: 0;
   overflow: hidden;
   font-family: Arial, sans-serif;
+  color: #fff;
 }
 
 .container {
@@ -22,10 +23,24 @@ body, html {
   scroll-snap-align: center;
   padding: 20px;
   transition: transform 0.3s ease-out; /* Transition for transform effect */
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  animation: fadeIn 2s;
+}
+
+.section p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
 }
 
 .section.left {
   background-color: #f8b400;
+  color: #333;
 }
 
 .section.middle {
@@ -42,10 +57,6 @@ body, html {
   to { opacity: 1; }
 }
 
-.section h2 {
-  animation: fadeIn 2s;
-}
-
 /* Media queries */
 /* @media (max-width: 768px) {
   body, html {
@@ -55,7 +66,7 @@ body, html {
   .container {
     flex-direction: column;
     height: auto;
-    scroll-snap-type: y mandatory; /* Adjusted for vertical scrolling *\/
+    scroll-snap-type: y mandatory; /* Adjusted for vertical scrolling */
   }
 
   .section {
