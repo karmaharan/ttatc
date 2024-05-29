@@ -3,19 +3,21 @@
 body, html {
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
+    overflow: hidden;
     font-family: Arial, sans-serif;
 }
 
 .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
     height: 100vh;
     overflow-x: auto;
+    overflow-y: hidden;
     scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
 }
 
 .section {
+    flex: 0 0 100vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -54,14 +56,20 @@ body, html {
 
 /* Media queries */
 @media (max-width: 768px) {
+    body, html {
+        overflow: auto;
+    }
+    
     .container {
-        grid-template-columns: 1fr;
+        flex-direction: column;
+        height: auto;
         overflow-x: hidden;
-        overflow-y: auto;
         scroll-snap-type: y mandatory;
     }
 
     .section {
+        flex: 0 0 auto;
+        height: 100vh;
         scroll-snap-align: start;
     }
 }
