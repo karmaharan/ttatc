@@ -5,27 +5,17 @@ body, html {
   font-family: Arial, sans-serif;
   color: #fff;
 }
-/* Add this to the existing CSS */
-.swipe-up-down-message {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 0.8);
-  color: white;
-  padding: 20px;
-  border-radius: 5px;
-}
+
 .container {
   display: flex;
   height: 100vh;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
+  flex-direction: row; /* Added to ensure horizontal layout */
 }
 
 .section {
-  flex: 0 0 100%;
+  flex: 0 0 100vw; /* Updated to use 100vw for width on smaller screens */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -62,6 +52,19 @@ body, html {
   background-color: #4285f4;
 }
 
+/* Add this to the existing CSS */
+.swipe-up-down-message {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+}
+
 /* Unique animations */
 @keyframes fadeIn {
   from { opacity: 0; }
@@ -70,19 +73,11 @@ body, html {
 
 /* Media queries */
 @media (max-width: 768px) {
-  body, html {
-    overflow: auto;
-  }
-
   .container {
-    flex-direction: column;
-    height: auto;
-    scroll-snap-type: y mandatory; /* Adjusted for vertical scrolling */
+    flex-direction: row; /* Added to ensure horizontal layout on smaller screens */
   }
 
   .section {
-    flex: 0 0 auto;
-    height: 100vh;
-    scroll-snap-align: start;
+    flex: 0 0 100vw; /* Added to set the width of sections to 100vw on smaller screens */
   }
 }
