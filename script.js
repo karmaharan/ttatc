@@ -40,6 +40,9 @@ document.addEventListener('DOMContentLoaded', () => {
             behavior: 'smooth',
             block: 'start' // Adjust as needed ('nearest', 'center', 'end')
           });
+
+          // Transform the current active section slightly when scrolled to
+          transformActiveSection();
         }
       }
     }
@@ -52,4 +55,15 @@ document.addEventListener('DOMContentLoaded', () => {
       currentIndex = 0; // Reset to the first section on mobile view
     }
   });
+
+  // Function to transform the active section
+  function transformActiveSection() {
+    // Reset transformation for all sections
+    sections.forEach((section, index) => {
+      section.style.transform = index === currentIndex ? 'scale(1.05)' : 'scale(1)';
+    });
+  }
+
+  // Initial transformation for the first active section
+  transformActiveSection();
 });
