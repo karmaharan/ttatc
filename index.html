@@ -1,152 +1,26 @@
-<!--Index-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Health Information Form</title>
+    <title>Founder Page</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Health Information Form</h1>
-
-    <form method="POST" action="https://clean-rodent-stable.ngrok-free.app/">
-        <label for="country">Country:</label>
-        <input type="text" id="country" name="country" required><br><br>
-
-        <label for="gender">Gender:</label>
-        <select id="gender" name="gender" required>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-            <option value="other">Other</option>
-        </select><br><br>
-
-        <label for="age">Age:</label>
-        <input type="number" id="age" name="age" min="1" max="120" required><br><br>
-
-        <label for="sleep_time">Sleep Time:</label>
-        <input type="time" id="sleep_time" name="sleep_time" required><br><br>
-
-        <label for="wake_time">Wake Time:</label>
-        <input type="time" id="wake_time" name="wake_time" required><br><br>
-
-        <label for="weight">Weight (kg):</label>
-        <input type="number" id="weight" name="weight" step="0.01" min="0.1" required><br><br>
-
-        <label for="height_feet">Height (feet):</label>
-        <input type="number" id="height_feet" name="height_feet" min="0" max="10" required><br><br>
-
-        <label for="height_inches">Height (inches):</label>
-        <input type="number" id="height_inches" name="height_inches" min="0" max="11" required><br><br>
-
-        <label for="activity_level">Activity Level:</label>
-        <select id="activity_level" name="activity_level" required>
-            <option value="sedentary">Sedentary (little or no exercise)</option>
-            <option value="light">Lightly active (light exercise/sports 1-3 days/week)</option>
-            <option value="moderate">Moderately active (moderate exercise/sports 3-5 days/week)</option>
-            <option value="very_active">Very active (hard exercise/sports 6-7 days a week)</option>
-            <option value="extra_active">Extra active (very hard exercise/sports & physical job or 2x training)</option>
-        </select><br><br>
-
-        <label for="goal">Goal:</label>
-        <select id="goal" name="goal" required>
-            <option value="lose_weight">Lose Weight</option>
-            <option value="maintain_weight">Maintain Weight</option>
-            <option value="gain_weight">Gain Weight</option>
-        </select><br><br>
-
-        <!-- Additional fields based on your application requirements -->
-
-        <label for="occupation">Occupation:</label>
-        <input type="text" id="occupation" name="occupation"><br><br>
-
-        <label for="specific_diet">Specific Diet:</label>
-        <input type="text" id="specific_diet" name="specific_diet"><br><br>
-
-        <label for="alcohol_consumption">Alcohol Consumption:</label>
-        <input type="text" id="alcohol_consumption" name="alcohol_consumption"><br><br>
-
-        <label for="smoker">Smoker:</label>
-        <input type="text" id="smoker" name="smoker"><br><br>
-
-        <label for="meal_times">Meal Times:</label>
-        <input type="text" id="meal_times" name="meal_times"><br><br>
-
-        <label for="food_allergies">Food Allergies:</label>
-        <input type="text" id="food_allergies" name="food_allergies"><br><br>
-
-        <label for="eat_out_frequency">Eat Out Frequency:</label>
-        <input type="text" id="eat_out_frequency" name="eat_out_frequency"><br><br>
-
-        <label for="exercise">Exercise:</label>
-        <input type="text" id="exercise" name="exercise"><br><br>
-
-        <label for="health_conditions">Health Conditions:</label>
-        <input type="text" id="health_conditions" name="health_conditions"><br><br>
-
-        <label for="dietary_goals">Dietary Goals:</label>
-        <input type="text" id="dietary_goals" name="dietary_goals"><br><br>
-
-        <label for="favorite_foods">Favorite Foods:</label>
-        <input type="text" id="favorite_foods" name="favorite_foods"><br><br>
-
-        <label for="eating_pace">Eating Pace:</label>
-        <input type="text" id="eating_pace" name="eating_pace"><br><br>
-
-        <label for="cooking_frequency">Cooking Frequency:</label>
-        <input type="text" id="cooking_frequency" name="cooking_frequency"><br><br>
-
-        <label for="nutrient_targets">Nutrient Targets:</label>
-        <input type="text" id="nutrient_targets" name="nutrient_targets"><br><br>
-
-        <label for="daily_routine">Daily Routine:</label>
-        <input type="text" id="daily_routine" name="daily_routine"><br><br>
-
-        <label for="travel_frequency">Travel Frequency:</label>
-        <input type="text" id="travel_frequency" name="travel_frequency"><br><br>
-
-        <label for="stressors_triggers">Stressors/Triggers:</label>
-        <input type="text" id="stressors_triggers" name="stressors_triggers"><br><br>
-
-        <label for="health_motivation">Health Motivation:</label>
-        <input type="text" id="health_motivation" name="health_motivation"><br><br>
-
-        <label for="negative_effects">Negative Effects:</label>
-        <input type="text" id="negative_effects" name="negative_effects"><br><br>
-
-        <label for="health_concerns">Health Concerns:</label>
-        <input type="text" id="health_concerns" name="health_concerns"><br><br>
-
-        <label for="social_eating_style">Social Eating Style:</label>
-        <input type="text" id="social_eating_style" name="social_eating_style"><br><br>
-
-        <label for="hydration_method">Hydration Method:</label>
-        <input type="text" id="hydration_method" name="hydration_method"><br><br>
-
-        <label for="meal_prep_method">Meal Prep Method:</label>
-        <input type="text" id="meal_prep_method" name="meal_prep_method"><br><br>
-
-        <label for="dietary_restrictions">Dietary Restrictions:</label>
-        <input type="text" id="dietary_restrictions" name="dietary_restrictions"><br><br>
-
-        <button type="submit">Submit</button>
-    </form>
-
-    <!-- Optional: JavaScript for client-side validation -->
-    <script>
-        document.querySelector('form').onsubmit = function(event) {
-            const requiredFields = document.querySelectorAll('[required]');
-            let isValid = true;
-            requiredFields.forEach(function(field) {
-                if (!field.value.trim()) {
-                    isValid = false;
-                    field.style.border = '1px solid red'; // Highlight required fields
-                }
-            });
-            if (!isValid) {
-                event.preventDefault(); // Prevent form submission if any required field is empty
-            }
-        };
-    </script>
-
+    <div class="container">
+        <div class="section left">
+            <h2>Left Section</h2>
+            <p>Content for the left section.</p>
+        </div>
+        <div class="section middle">
+            <h2>Middle Section</h2>
+            <p>Content for the middle section.</p>
+        </div>
+        <div class="section right">
+            <h2>Right Section</h2>
+            <p>Content for the right section.</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
