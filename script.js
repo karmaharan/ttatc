@@ -4,14 +4,16 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentIndex = 0;
   let isScrolling = false;
   let startX, startY;
+  let touchStarted = false;
 
   const handleTouchStart = (event) => {
+    touchStarted = true;
     startX = event.touches[0].clientX;
     startY = event.touches[0].clientY;
   };
 
   const handleTouchMove = (event) => {
-    if (!isScrolling) {
+    if (touchStarted) {
       isScrolling = true;
 
       setTimeout(() => {
@@ -25,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (Math.abs(diffX) > Math.abs(diffY)) {
         // Horizontal swipe
+        event.preventDefault(); // Prevent default scrolling behavior
         if (diffX > 0) {
           // Swipe right (next section)
           currentIndex = Math.min(currentIndex + 1, sections.length - 1);
@@ -39,16 +42,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         transformActiveSection();
-      } else {
-        // Vertical scroll
-        startX = currentX; // Reset startX
-        startY = currentY; // Reset startY
       }
     }
   };
 
+  const handleTouchEnd = () => {
+    touchStarted = false;
+    startX = null;
+    startY = null;
+  };
+
   container.addEventListener('touchstart', handleTouchStart, { passive: true });
-  container.addEventListener('touchmove', handleTouchMove, { passive: true });
+  container.addEventListener('touchmove', handleTouchMove, { passive: false });
+  container.addEventListener('touchend', handleTouchEnd);
 
   // Function to transform the active section
   function transformActiveSection() {
