@@ -39,6 +39,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         transformActiveSection();
+      } else {
+        // Vertical scroll
+        startX = currentX; // Reset startX
+        startY = currentY; // Reset startY
       }
     }
   };
