@@ -28,12 +28,14 @@ document.addEventListener('DOMContentLoaded', () => {
       if (Math.abs(diffX) > Math.abs(diffY)) {
         // Horizontal swipe
         event.preventDefault(); // Prevent default scrolling behavior
+
+        // Swipe direction based on diffX
         if (diffX > 0) {
           // Swipe right (next section)
-          currentIndex = Math.min(currentIndex + 1, sections.length - 1);
+          currentIndex = (currentIndex + 1) % sections.length;
         } else {
           // Swipe left (previous section)
-          currentIndex = Math.max(currentIndex - 1, 0);
+          currentIndex = (currentIndex - 1 + sections.length) % sections.length;
         }
 
         sections[currentIndex].scrollIntoView({
