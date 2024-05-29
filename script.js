@@ -49,6 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         transformActiveSection();
+        startX = currentX; // Reset startX to prevent further navigation
+        startY = currentY; // Reset startY to prevent further navigation
       }
     }
   };
