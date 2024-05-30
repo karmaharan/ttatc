@@ -12,6 +12,7 @@ body, html {
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     flex-direction: row; /* Horizontal layout for sections */
+    overflow-x: auto; /* Allow horizontal scrolling on smaller screens */
 }
 
 .section {
@@ -24,6 +25,7 @@ body, html {
     scroll-snap-align: center;
     padding: 20px;
     text-align: center;
+    white-space: nowrap; /* Prevent wrapping content */
 }
 
 .section h2 {
@@ -72,11 +74,10 @@ body, html {
 /* Media queries */
 @media (max-width: 768px) {
     .container {
-        flex-direction: column; /* Stack sections vertically on smaller screens */
+        overflow-x: hidden; /* Disable horizontal scrolling on smaller screens */
     }
 
     .section {
-        flex: 0 0 100vh; /* Adjust to full viewport height for vertical stacking */
-        height: 100vh; /* Full viewport height */
+        flex: 0 0 100vw; /* Adjust to full viewport width for smaller screens */
     }
 }
