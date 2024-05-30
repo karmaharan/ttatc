@@ -55,6 +55,18 @@ color: white;
 padding: 20px;
 border-radius: 5px;
 }
+
+a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+/* Example hover effect for images */
+img:hover {
+    transform: scale(1.1); /* Make image slightly larger on hover */
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
 /* Unique animations */
 @keyframes fadeIn {
 from { opacity: 0; }
