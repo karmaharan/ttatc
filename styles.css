@@ -76,7 +76,7 @@ body, html {
     }
 
     .section {
-        width: 100%; /* Full width on smaller screens */
+        flex: 0 0 100vh; /* Adjust to full viewport height for vertical stacking */
         height: 100vh; /* Full viewport height */
     }
 }
