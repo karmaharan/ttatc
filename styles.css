@@ -23,7 +23,7 @@ body, html {
   height: 100vh;
   scroll-snap-align: center;
   padding: 20px;
-  transition: transform 0.3s ease-out; /* Transition for transform effect */
+
   text-align: center;
 }
 
