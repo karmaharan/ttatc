@@ -18,11 +18,12 @@ flex-direction: row; /* Added to ensure horizontal layout */
     max-width: 24%;
     height: auto;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Dropped shadow */
     transition: box-shadow 0.3s ease;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
 }
-
+.sophisticated-image:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7); /* Increase shadow on hover */
+}
 
 .section {
 flex: 0 0 100vw; /* Updated to use 100vw for width on smaller screens */
