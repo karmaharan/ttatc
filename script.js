@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Function to transform the active section
   function transformActiveSection() {
     sections.forEach((section, index) => {
-      section.style.transform = index === currentIndex ? 'scale(1.05)' : 'scale(1)';
+      
     });
   }
 
