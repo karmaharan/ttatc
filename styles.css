@@ -11,21 +11,22 @@ body, html {
   height: 100vh;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
-  flex-direction: row; /* Added to ensure horizontal layout */
+  overflow-x: auto; /* Added to enable horizontal scrolling on smaller screens */
 }
 
 .section {
-  flex: 0 0 100vw; /* Updated to use 100vw for width on smaller screens */
+  min-width: 100vw; /* Changed from fixed width to minimum width */
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   scroll-snap-align: center;
   padding: 20px;
-
   text-align: center;
 }
+
+
 
 .section h2 {
   font-size: 2.5rem;
