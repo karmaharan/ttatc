@@ -14,8 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const handleTouchMove = (event) => {
     if (isScrolling) return; // Prevent move events during scrolling
+
     const currentX = event.touches[0].clientX;
     const currentY = event.touches[0].clientY;
+
     const diffX = startX - currentX;
     const diffY = currentY - startY;
 
@@ -35,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       isScrolling = true; // Set scrolling flag
+
       sections[currentIndex].scrollIntoView({
         behavior: 'smooth',
         block: 'start'
@@ -55,10 +58,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const handleWheel = (event) => {
     event.preventDefault(); // Prevent default scrolling behavior
+
     if (isScrolling) return; // Prevent wheel events during scrolling
 
     const delta = Math.sign(event.deltaY);
-    
+
     if (delta > 0 && currentIndex < sections.length - 1) {
       // Scroll down (next section)
       currentIndex++;
@@ -71,6 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     isScrolling = true; // Set scrolling flag
+
     sections[currentIndex].scrollIntoView({
       behavior: 'smooth',
       block: 'start'
@@ -83,10 +88,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 800);
   };
 
+  // Event listeners
   container.addEventListener('touchstart', handleTouchStart, { passive: true });
   container.addEventListener('touchmove', handleTouchMove, { passive: false });
   container.addEventListener('touchend', handleTouchEnd);
-
   container.addEventListener('wheel', handleWheel, { passive: false });
 
   // Function to transform the active section
