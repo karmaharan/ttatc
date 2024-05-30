@@ -1,3 +1,12 @@
+    function toggleContent() {
+        var content = document.getElementById('hiddenContent');
+        if (content.style.display === 'none') {
+            content.style.display = 'block';
+        } else {
+            content.style.display = 'none';
+        }
+    }
+
 document.addEventListener('DOMContentLoaded', () => {
 const container = document.querySelector('.container');
 const sections = container.querySelectorAll('.section');
@@ -80,3 +89,4 @@ section.style.transform = index === currentIndex ? 'scale(1.05)' : 'scale(1)';
 }
 transformActiveSection();
 });
+
