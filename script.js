@@ -103,12 +103,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
   transformActiveSection();
 });
-function showSwipeMessage() {
-  const message = document.querySelector('.swipe-up-down-message');
-  message.style.display = 'block';
 
-  clearTimeout(messageTimeout);
-  messageTimeout = setTimeout(function() {
-    message.style.display = 'none';
-  }, 3000);
-}
