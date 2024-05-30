@@ -96,7 +96,7 @@ a:hover {
 
 /* Example hover effect for images */
 img:hover {
-    transform: scale(1.1); /* Make image slightly larger on hover */
+
     transition: transform 0.3s ease; /* Smooth transition */
 }
 
