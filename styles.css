@@ -46,6 +46,22 @@ background-color: #34a853;
 .section.right {
 background-color: #4285f4;
 }
+/* Example animation */
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.section img {
+    animation: slideIn 1s ease;
+}
+
 /* Add this to the existing CSS */
 .swipe-up-down-message {
 display: none;
