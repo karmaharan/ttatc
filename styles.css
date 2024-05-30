@@ -1,83 +1,71 @@
-     body, html {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            color: #fff;
-            overflow-x: hidden; /* Prevent horizontal overflow */
-        }
-
-        .container {
-            display: flex;
-            height: 100vh; /* Full viewport height */
-            -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
-            flex-direction: row; /* Horizontal layout for sections */
-            overflow-x: auto; /* Allow horizontal scrolling on smaller screens */
-            scroll-snap-type: x mandatory; /* Enable mandatory snap scrolling */
-        }
-
-        .section {
-            flex: 0 0 100vw; /* Each section occupies full viewport width */
-            display: flex;
-            flex-direction: column;
-            justify-content: center; /* Center content vertically */
-            align-items: center; /* Center content horizontally */
-            height: 100vh; /* Full viewport height */
-            scroll-snap-align: center;
-            padding: 20px;
-            text-align: center;
-            white-space: nowrap; /* Prevent wrapping content */
-        }
-
-        .section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            animation: fadeIn 2s;
-        }
-
-        .section p {
-            font-size: 1.2rem;
-            line-height: 1.5;
-            margin-bottom: 20px;
-        }
-
-        .section.left {
-            background-color: #f8b400;
-            color: #333;
-        }
-
-        .section.middle {
-            background-color: #34a853;
-        }
-
-        .section.right {
-            background-color: #4285f4;
-        }
-
-        .swipe-up-down-message {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: rgba(0, 0, 0, 0.8);
-            color: white;
-            padding: 20px;
-            border-radius: 5px;
-        }
-
-        /* Unique animations */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        /* Media queries */
-        @media (max-width: 768px) {
-            .container {
-                overflow-x: hidden; /* Disable horizontal scrolling on smaller screens */
-            }
-
-            .section {
-                flex: 0 0 100vw; /* Adjust to full viewport width for smaller screens */
-            }
-        }
+body, html {
+margin: 0;
+padding: 0;
+overflow: hidden;
+font-family: Arial, sans-serif;
+color: #fff;
+}
+.container {
+display: flex;
+height: 100vh;
+scroll-snap-type: x mandatory;
+-webkit-overflow-scrolling: touch;
+flex-direction: row; /* Added to ensure horizontal layout */
+}
+.section {
+flex: 0 0 100vw; /* Updated to use 100vw for width on smaller screens */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+height: 100vh;
+scroll-snap-align: center;
+padding: 20px;
+text-align: center;
+}
+.section h2 {
+font-size: 2.5rem;
+margin-bottom: 20px;
+animation: fadeIn 2s;
+}
+.section p {
+font-size: 1.2rem;
+line-height: 1.5;
+margin-bottom: 20px;
+}
+.section.left {
+background-color: #f8b400;
+color: #333;
+}
+.section.middle {
+background-color: #34a853;
+}
+.section.right {
+background-color: #4285f4;
+}
+/* Add this to the existing CSS */
+.swipe-up-down-message {
+display: none;
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+background-color: rgba(0, 0, 0, 0.8);
+color: white;
+padding: 20px;
+border-radius: 5px;
+}
+/* Unique animations */
+@keyframes fadeIn {
+from { opacity: 0; }
+to { opacity: 1; }
+}
+/* Media queries */
+@media (max-width: 768px) {
+.container {
+flex-direction: row; /* Added to ensure horizontal layout on smaller screens */
+}
+.section {
+flex: 0 0 100vw; /* Added to set the width of sections to 100vw on smaller screens */
+}
+}
