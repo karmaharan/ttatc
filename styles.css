@@ -65,7 +65,8 @@ to { opacity: 1; }
 .container {
 flex-direction: row; /* Added to ensure horizontal layout on smaller screens */
 }
-.section {
-flex: 0 0 100vw; /* Added to set the width of sections to 100vw on smaller screens */
+  .section {
+    flex: 0 0 100vh; /* Set the height of each section to 100vh (viewport height) */
+    max-height: none; /* Remove the maximum height limit */
 }
 }
