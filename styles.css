@@ -81,4 +81,12 @@ flex-direction: row; /* Added to ensure horizontal layout on smaller screens */
     flex: 0 0 100vh; /* Set the height of each section to 100vh (viewport height) */
     max-height: none; /* Remove the maximum height limit */
 }
+    .sophisticated-image {
+    display: block;
+    max-width: 24%;
+    height: auto;
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease;
+    box-shadow: 0 18px 16px rgba(0, 0, 0, 0.8); /* Increase shadow on hover */
+}
 }
