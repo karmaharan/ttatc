@@ -15,15 +15,16 @@ body, html {
 }
 
 .section {
-  min-width: 100vw; /* Changed from fixed width to minimum width */
+  min-width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; /* Centers items vertically */
+  align-items: center; /* Centers items horizontally */
   scroll-snap-align: center;
   padding: 20px;
   text-align: center;
+  box-sizing: border-box; /* Added to include padding in the height calculation */
 }
 
 
