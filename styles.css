@@ -15,7 +15,7 @@ flex-direction: row; /* Added to ensure horizontal layout */
 
 .sophisticated-image {
     display: block;
-    max-width: 34%;
+    max-width: 24%;
     height: auto;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Dropped shadow */
