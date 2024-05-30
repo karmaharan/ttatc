@@ -20,11 +20,9 @@ flex-direction: row; /* Added to ensure horizontal layout */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Dropped shadow */
     transition: box-shadow 0.3s ease;
-}
-
-.sophisticated-image:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
 }
+
 
 .section {
 flex: 0 0 100vw; /* Updated to use 100vw for width on smaller screens */
@@ -60,45 +58,13 @@ background-color: #34a853;
 .section.right {
 background-color: #4285f4;
 }
-/* Example animation */
-@keyframes slideIn {
-    from {
-        transform: translateY(-100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
 
-.section img {
-    animation: slideIn 1s ease;
-}
-
-/* Add this to the existing CSS */
-.swipe-up-down-message {
-display: none;
-position: fixed;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-background-color: rgba(0, 0, 0, 0.8);
-color: white;
-padding: 20px;
-border-radius: 5px;
-}
 
 a:hover {
     color: red;
     text-decoration: underline;
 }
 
-/* Example hover effect for images */
-img:hover {
-
-    transition: transform 0.3s ease; /* Smooth transition */
-}
 
 /* Unique animations */
 @keyframes fadeIn {
