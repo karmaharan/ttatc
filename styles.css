@@ -12,6 +12,7 @@ body, html {
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   flex-direction: row;
+  overflow-x: scroll;
 }
 
 .section {
