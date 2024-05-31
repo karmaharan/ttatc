@@ -1,93 +1,155 @@
 body, html {
-margin: 0;
-padding: 0;
-overflow: hidden;
-font-family: Arial, sans-serif;
-color: #fff;
-}
-.container {
-display: flex;
-height: 100vh;
-scroll-snap-type: x mandatory;
--webkit-overflow-scrolling: touch;
-flex-direction: row; /* Added to ensure horizontal layout */
+  margin: 0;
+  padding: 0;
+  overflow-x: scroll; /* Allow horizontal scrolling */
+  font-family: Arial, sans-serif;
+  color: #fff;
 }
 
-.sophisticated-image {
-    display: block;
-    max-width: 24%;
-    height: auto;
-    border-radius: 8px;
-    transition: box-shadow 0.3s ease;
-    box-shadow: 0 18px 16px rgba(0, 0, 0, 0.8); /* Increase shadow on hover */
-}
-.sophisticated-image:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.9); /* Increase shadow on hover */
+.container {
+  display: flex;
+  height: 100vh;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  flex-direction: row;
 }
 
 .section {
-flex: 0 0 100vw; /* Updated to use 100vw for width on smaller screens */
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-height: 100vh;
-scroll-snap-align: center;
-padding: 20px;
-text-align: center;
-background-color: #f0f0f0;
-border-radius: 10px;
-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-.section h2 {
-font-size: 2.5rem;
-margin-bottom: 20px;
-animation: fadeIn 2s;
-}
-.section t {
-font-size: 1.2rem;
-line-height: 1.5;
-margin-bottom: 20px;
-}
-.section.left {
-background-color: #f8b400;
-color: #333;
-}
-.section.middle {
-background-color: #34a853;
-}
-.section.right {
-background-color: #4285f4;
+  flex: 0 0 100vw; /* Set the width of each section to 100vw (viewport width) */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  scroll-snap-align: center;
+  padding: 20px;
+  text-align: center;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  animation: fadeIn 2s;
+}
+
+.section t {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.section.left {
+  background-color: #f8b400;
+  color: #333;
+}
+
+.section.middle {
+  background-color: #34a853;
+}
+
+.section.right {
+  background-color: #4285f4;
+}
+
+.sophisticated-image {
+  display: block;
+  max-width: 24%;
+  height: auto;
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease;
+  box-shadow: 0 18px 16px rgba(0, 0, 0, 0.8);
+}
+
+.sophisticated-image:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.9);
+}
 
 a:hover {
-    color: red;
-    text-decoration: underline;
+  color: red;
+  text-decoration: underline;
 }
 
-
-
-/* Unique animations */
 @keyframes fadeIn {
-from { opacity: 0; }
-to { opacity: 1; }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
+
+/* Zipper effect styles */
+.zip-container {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  background-color: #333;
+  border: 2px solid #666;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.zipper-handle {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 20px;
+  background-color: #666;
+  border-radius: 0 0 10px 10px;
+  cursor: pointer;
+}
+
+.zipper {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 10px;
+  background-color: #666;
+  transition: opacity 0.3s ease;
+}
+
+.content {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 20px);
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #f0f0f0;
+  color: #333;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.zip-container.open .zipper {
+  opacity: 1;
+}
+
+.zip-container.open .content {
+  opacity: 1;
+}
+
 /* Media queries */
 @media (max-width: 768px) {
-.container {
-flex-direction: row; /* Added to ensure horizontal layout on smaller screens */
-}
-  .section {
+  .container {
+    flex-direction: row; /* Maintain horizontal layout on smaller screens */
+  }
 
+  .section {
     max-height: none; /* Remove the maximum height limit */
-}
-    .sophisticated-image {
+    flex: 0 0 100vw; /* Ensure each section takes up the full viewport width */
+  }
+
+  .sophisticated-image {
     display: block;
     max-width: 24%;
     height: auto;
     border-radius: 8px;
     transition: box-shadow 0.3s ease;
-    box-shadow: 0 18px 16px rgba(0, 0, 0, 0.8); /* Increase shadow on hover */
-}
+    box-shadow: 0 18px 16px rgba(0, 0, 0, 0.8);
+  }
 }
