@@ -80,61 +80,6 @@ a:hover {
   to { opacity: 1; }
 }
 
-/* Zipper effect styles */
-.zip-container {
-  position: relative;
-  width: 300px;
-  height: 200px;
-  background-color: #333;
-  border: 2px solid #666;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.zipper-handle {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 40px;
-  height: 20px;
-  background-color: #666;
-  border-radius: 0 0 10px 10px;
-  cursor: pointer;
-}
-
-.zipper {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  height: 10px;
-  background-color: #666;
-  transition: opacity 0.3s ease;
-}
-
-.content {
-  position: absolute;
-  top: 20px;
-  left: 0;
-  width: 100%;
-  height: calc(100% - 20px);
-  padding: 20px;
-  box-sizing: border-box;
-  background-color: #f0f0f0;
-  color: #333;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.zip-container.open .zipper {
-  opacity: 1;
-}
-
-.zip-container.open .content {
-  opacity: 1;
-}
 
 /* Media queries */
 @media (max-width: 768px) {
@@ -149,7 +94,8 @@ a:hover {
 
   .sophisticated-image {
     display: block;
-    max-width: 24%;
+    max-height: 49vh !important;
+    max-width: fit-content;
     height: auto;
     border-radius: 8px;
     transition: box-shadow 0.3s ease;
