@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
   let startX = 0;
-  let startWidth = 0;
   let isDragging = false;
   let isInitialized = false;
-  let isAutoOpeningAllowed = true; // Flag to control auto-opening
+  let isAutoOpeningAllowed = true;
+  let initialSlideDone = false;
 
   const zipperHandle = document.querySelector('.zipper-handle');
   const zipContainer = document.querySelector('.zip-container');
@@ -16,55 +16,63 @@ document.addEventListener('DOMContentLoaded', function() {
     content.style.transform = 'translateX(100%)';
   }
 
-  zipperHandle.addEventListener('mousedown', function(e) {
-    e.preventDefault();
-    startX = e.clientX;
-    startWidth = zipper.offsetWidth;
-    isDragging = true;
+  function handleStart(e) {
+  e.preventDefault();
+  const touchEvent = e.type.startsWith('touch');
+  startX = touchEvent ? e.touches[0].clientX : e.clientX;
+  isDragging = true;
 
-    if (!isInitialized) {
-      isInitialized = true;
-      resetZipperPosition();
-    }
+  if (!isInitialized) {
+    isInitialized = true;
+    resetZipperPosition();
+  }
 
-    hideCountdown(); // Hide countdown if it exists
-  });
+  hideCountdown();
+}
 
-  document.addEventListener('mousemove', function(e) {
+  function handleMove(e) {
     if (isDragging) {
-      const deltaX = e.clientX - startX;
-      const newWidth = Math.min(Math.max(0, startWidth + deltaX), zipContainer.offsetWidth);
+      const touchEvent = e.type.startsWith('touch');
+      const currentX = touchEvent ? e.touches[0].clientX : e.clientX;
+      const deltaX = currentX - startX;
+      const newWidth = Math.min(Math.max(0, deltaX), zipContainer.offsetWidth);
       const unzipPercentage = newWidth / zipContainer.offsetWidth;
 
       zipper.style.width = `${newWidth}px`;
       zipperHandle.style.left = `${newWidth - zipperHandle.offsetWidth / 2}px`;
       content.style.transform = `translateX(${(1 - unzipPercentage) * 100}%)`;
 
-      // Disable auto-opening if the zipper handle is dragged back
       if (unzipPercentage < 0.5) {
         isAutoOpeningAllowed = true;
       }
     }
-  });
+  }
 
-  document.addEventListener('mouseup', function() {
+  function handleEnd() {
     if (isDragging) {
       isDragging = false;
       const unzipPercentage = zipper.offsetWidth / zipContainer.offsetWidth;
 
       if (unzipPercentage >= 0.5 && isAutoOpeningAllowed) {
         zipContainer.classList.add('unzip');
-        startTimer(unzipPercentage); // Pass unzipPercentage to startTimer
+        startTimer(unzipPercentage);
       } else {
         zipContainer.classList.remove('unzip');
         resetZipperPosition();
         stopTimer();
-
-        // Reset auto-opening flag if re-zipping
         isAutoOpeningAllowed = false;
       }
     }
-  });
+  }
+
+  zipperHandle.addEventListener('touchstart', handleStart, { passive: true });
+  zipperHandle.addEventListener('mousedown', handleStart);
+
+  document.addEventListener('touchmove', handleMove, { passive: true });
+  document.addEventListener('mousemove', handleMove);
+
+  document.addEventListener('touchend', handleEnd);
+  document.addEventListener('mouseup', handleEnd);
 
   let timerInterval;
   let countdownElement;
