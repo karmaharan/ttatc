@@ -61,114 +61,115 @@
             };
         };
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const container = document.querySelector('.container');
-            const sections = container.querySelectorAll('.section');
-            let currentIndex = 0;
-            let isScrolling = false;
-            let startX = 0, startY = 0;
-            let isDraggingZip = false; // Flag to track zipper dragging
+document.addEventListener('DOMContentLoaded', () => {
+    const container = document.querySelector('.container');
+    const sections = container.querySelectorAll('.section');
+    let currentIndex = 0;
+    let isScrolling = false;
+    let startX = 0, startY = 0;
+    let isDraggingZip = false; // Flag to track zipper dragging
 
-            const swipeThreshold = 50; // Minimum swipe distance to trigger navigation
+    const swipeThreshold = 50; // Minimum swipe distance to trigger navigation
 
-            const handleTouchStart = (event) => {
-                if (isScrolling || isDraggingZip) return; // Prevent starting a new swipe or zipper drag if already scrolling or dragging zipper
-                startX = event.touches[0].clientX;
-                startY = event.touches[0].clientY;
-            };
+    const handleTouchStart = (event) => {
+        if (isScrolling || isDraggingZip) return; // Prevent starting a new swipe or zipper drag if already scrolling or dragging zipper
+        startX = event.touches[0].clientX;
+        startY = event.touches[0].clientY;
+    };
 
-            const handleTouchMove = (event) => {
-                if (isScrolling || isDraggingZip) return; // Prevent move events during scrolling or dragging zipper
-                const currentX = event.touches[0].clientX;
-                const currentY = event.touches[0].clientY;
-                const diffX = startX - currentX;
-                const diffY = currentY - startY;
+    const handleTouchMove = (event) => {
+        if (isScrolling || isDraggingZip) return; // Prevent move events during scrolling or dragging zipper
+        const currentX = event.touches[0].clientX;
+        const currentY = event.touches[0].clientY;
+        const diffX = startX - currentX;
+        const diffY = currentY - startY;
 
-                // Determine if this is a horizontal swipe
-                if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > swipeThreshold) {
-                    event.preventDefault(); // Prevent default scrolling behavior
-                    if (diffX > 0 && currentIndex < sections.length - 1) {
-                        // Swipe left (next section)
-                        currentIndex++;
-                    } else if (diffX < 0 && currentIndex > 0) {
-                        // Swipe right (previous section)
-                        currentIndex--;
-                    } else {
-                        // If at the edge, do nothing
-                        return;
-                    }
-                    isScrolling = true; // Set scrolling flag
-                    sections[currentIndex].scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    setTimeout(() => {
-                        isScrolling = false; // Reset scrolling flag after animation
-                    }, 800);
-                }
-            };
+        // Determine if this is a horizontal swipe
+        if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > swipeThreshold) {
+            event.preventDefault(); // Prevent default scrolling behavior
+            if (diffX > 0 && currentIndex < sections.length - 1) {
+                // Swipe left (next section)
+                currentIndex++;
+            } else if (diffX < 0 && currentIndex > 0) {
+                // Swipe right (previous section)
+                currentIndex--;
+            } else {
+                // If at the edge, do nothing
+                return;
+            }
+            isScrolling = true; // Set scrolling flag
+            sections[currentIndex].scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+            setTimeout(() => {
+                isScrolling = false; // Reset scrolling flag after animation
+            }, 800);
+        }
+    };
 
-            const handleTouchEnd = () => {
-                startX = 0;
-                startY = 0;
-            };
+    const handleTouchEnd = () => {
+        startX = 0;
+        startY = 0;
+    };
 
-            const handleWheel = (event) => {
-                if (isDraggingZip) return; // Prevent wheel events during dragging zipper
-                event.preventDefault(); // Prevent default scrolling behavior
-                if (isScrolling) return; // Prevent wheel events during scrolling
-                const delta = Math.sign(event.deltaY);
-                if (delta > 0 && currentIndex < sections.length - 1) {
-                    // Scroll down (next section)
-                    currentIndex++;
-                } else if (delta < 0 && currentIndex > 0) {
-                    // Scroll up (previous section)
-                    currentIndex--;
-                } else {
-                    // If at the edge, do nothing
-                    return;
-                }
-                isScrolling = true; // Set scrolling flag
-                sections[currentIndex].scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-                setTimeout(() => {
-                    isScrolling = false; // Reset scrolling flag after animation
-                }, 800);
-            };
+    const handleWheel = (event) => {
+        if (isDraggingZip) return; // Prevent wheel events during dragging zipper
+        event.preventDefault(); // Prevent default scrolling behavior
+        if (isScrolling) return; // Prevent wheel events during scrolling
+        const delta = Math.sign(event.deltaY);
+        if (delta > 0 && currentIndex < sections.length - 1) {
+            // Scroll down (next section)
+            currentIndex++;
+        } else if (delta < 0 && currentIndex > 0) {
+            // Scroll up (previous section)
+            currentIndex--;
+        } else {
+            // If at the edge, do nothing
+            return;
+        }
+        isScrolling = true; // Set scrolling flag
+        sections[currentIndex].scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+        setTimeout(() => {
+            isScrolling = false; // Reset scrolling flag after animation
+        }, 800);
+    };
 
-            container.addEventListener('touchstart', handleTouchStart, { passive: true });
-            container.addEventListener('touchmove', handleTouchMove, { passive: false });
-            container.addEventListener('touchend', handleTouchEnd);
-            container.addEventListener('wheel', handleWheel, { passive: false });
+    container.addEventListener('touchstart', handleTouchStart, { passive: true });
+    container.addEventListener('touchmove', handleTouchMove, { passive: false });
+    container.addEventListener('touchend', handleTouchEnd);
+    container.addEventListener('wheel', handleWheel, { passive: false });
 
-            // Event listeners for zipper dragging
-            const zipperHandle = document.querySelector('.zipper-handle');
+    // Event listeners for zipper dragging
+    const zipperHandle = document.querySelector('.zipper-handle');
 
-            const handleZipperStart = (event) => {
-                event.preventDefault();
-                isDraggingZip = true; // Set dragging zipper flag
-            };
+    const handleZipperStart = (event) => {
+        event.preventDefault();
+        isDraggingZip = true; // Set dragging zipper flag
+    };
 
-            const handleZipperMove = (event) => {
-                if (!isDraggingZip) return; // Only handle if dragging zipper
-                event.preventDefault(); // Prevent default scrolling behavior
-                // Handle zipper dragging logic here
-            };
+    const handleZipperMove = (event) => {
+        if (!isDraggingZip) return; // Only handle if dragging zipper
+        event.preventDefault(); // Prevent default scrolling behavior
+        // Handle zipper dragging logic here
+    };
 
-            const handleZipperEnd = () => {
-                isDraggingZip = false; // Reset dragging zipper flag
-            };
+    const handleZipperEnd = () => {
+        isDraggingZip = false; // Reset dragging zipper flag
+    };
 
-            zipperHandle.addEventListener('touchstart', handleZipperStart, { passive: true });
-            zipperHandle.addEventListener('mousedown', handleZipperStart);
+    zipperHandle.addEventListener('touchstart', handleZipperStart);
+    zipperHandle.addEventListener('mousedown', handleZipperStart);
 
-            document.addEventListener('touchmove', handleZipperMove, { passive: false });
-            document.addEventListener('mousemove', handleZipperMove);
+    document.addEventListener('touchmove', handleZipperMove);
+    document.addEventListener('mousemove', handleZipperMove);
 
-            document.addEventListener('touchend', handleZipperEnd);
-            document.addEventListener('mouseup', handleZipperEnd);
+    document.addEventListener('touchend', handleZipperEnd);
+    document.addEventListener('mouseup', handleZipperEnd);
+
 
             let timerInterval;
             let countdownElement;
