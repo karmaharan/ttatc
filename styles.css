@@ -4,6 +4,7 @@ body, html {
   overflow-x: scroll; /* Allow horizontal scrolling */
   font-family: Arial, sans-serif;
   color: #fff;
+  overflow-y: hidden;
 }
 
 .container {
@@ -13,6 +14,7 @@ body, html {
   -webkit-overflow-scrolling: touch;
   flex-direction: row;
   overflow-x: scroll;
+  overflow-y: hidden;
 }
 
 .section {
