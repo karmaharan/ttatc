@@ -16,7 +16,21 @@ body, html {
   overflow-x: scroll;
   overflow-y: hidden;
 }
+.slider {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
 
+.trigger {
+    color: white;
+    font-size: 2em;
+}
 .section {
   flex: 0 0 100vw; /* Set the width of each section to 100vw (viewport width) */
   display: flex;
