@@ -121,6 +121,8 @@ a:hover {
       transition: transform 0.3s ease;
       transform: translateX(100%);
       border-radius: 8px;
+      color: BLACK;
+      font-weight: bold;
     }
 
     .zip-container.unzip .zipper {
