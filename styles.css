@@ -25,6 +25,7 @@ body, html {
     padding: 10px;
     border-radius: 10px;
     text-align: center;
+    display: none;
 }
 
 .trigger {
@@ -115,5 +116,8 @@ a:hover {
     border-radius: 8px;
     transition: box-shadow 0.3s ease;
     box-shadow: 0 18px 16px rgba(0, 0, 0, 0.8);
+  }
+  .slider {
+display: block;
   }
 }
