@@ -8,15 +8,13 @@
     <link rel="stylesheet" href="don.css">
 </head>
 <body>
-    
     <div class="container">
-                <div class="slider">
+        <div class="slider">
             <div class="trigger">x</div>
         </div>
         <div class="section left">
             <h2>What is TTATC?</h2>
             <t>|असतो मा सद्गमय|</t>
-            <!-- Add more content or elements here -->
             <ul>
                 <li>Additional item 1</li>
                 <li>Additional item 2</li>
@@ -25,62 +23,258 @@
         </div>
         <div class="section middle">
             <h2>Subham Mukherjee</h2>
-                        <div class="clickable" onclick="toggleContent()" style="cursor: pointer;
-                            ">WHO AM I?</div>
-<div id="hiddenContent" style="display: none;">
-    <p></p>
-</div>
-            
-
+            <div class="clickable" onclick="toggleContent()" style="cursor: pointer;">WHO AM I?</div>
+            <div id="hiddenContent" style="display: none;">
+                <p></p>
+            </div>
             <img src="4413921.png" alt="Example Image" class="sophisticated-image" />
             <t>"Crafted with Art and Developed By Science"</t>
         </div>
         <div class="section right">
             <h2>Donate Us</h2>
             <t>Content for the right section.</t>
-<div class="zip-container">
-  <p style="
-    font-family: cursive;
-    color: white;
-    transform: scale(1.5);
-
-    position: relative;
-">pass me some food</p>
-  <div class="zipper-handle"></div>
-  <div class="zipper" style="opacity: 0;"></div>
-  <div class="content">
-    <p>This is the unzipped content.</p>
-    <p>You can add more content here.</p>
-  </div>
-</div>
-            <div>
+            <div class="zip-container">
+                <p style="font-family: cursive; color: white; transform: scale(1.5); position: relative;">pass me some food</p>
+                <div class="zipper-handle"></div>
+                <div class="zipper" style="opacity: 0;"></div>
+                <div class="content">
+                    <p>This is the unzipped content.</p>
+                    <p>You can add more content here.</p>
+                </div>
             </div>
         </div>
     </div>
-    <script>    function toggleContent() {
-        var content = document.getElementById('hiddenContent');
-        if (content.style.display === 'none') {
-            content.style.display = 'block';
-        } else {
-            content.style.display = 'none';
+    <script>
+        function toggleContent() {
+            var content = document.getElementById('hiddenContent');
+            if (content.style.display === 'none') {
+                content.style.display = 'block';
+            } else {
+                content.style.display = 'none';
+            }
         }
-    }
-</script>
-        <script>const debounce = (func, delay) => {
-  let debounceTimer;
-  return function() {
-    const context = this;
-    const args = arguments;
-    clearTimeout(debounceTimer);
-    debounceTimer = setTimeout(() => func.apply(context, args), delay);
-  };
-};
 
-const handleTouchMoveDebounced = debounce(handleTouchMove, 200); // Adjust delay as needed
-container.addEventListener('touchmove', handleTouchMoveDebounced, { passive: false });
+        const debounce = (func, delay) => {
+            let debounceTimer;
+            return function() {
+                const context = this;
+                const args = arguments;
+                clearTimeout(debounceTimer);
+                debounceTimer = setTimeout(() => func.apply(context, args), delay);
+            };
+        };
 
-</script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.querySelector('.container');
+            const sections = container.querySelectorAll('.section');
+            let currentIndex = 0;
+            let isScrolling = false;
+            let startX = 0, startY = 0;
+            const swipeThreshold = 50; // Minimum swipe distance to trigger navigation
+
+            const handleTouchStart = (event) => {
+                if (isScrolling) return; // Prevent starting a new swipe if already scrolling
+                startX = event.touches[0].clientX;
+                startY = event.touches[0].clientY;
+            };
+
+            const handleTouchMove = (event) => {
+                if (isScrolling) return; // Prevent move events during scrolling
+                const currentX = event.touches[0].clientX;
+                const currentY = event.touches[0].clientY;
+                const diffX = startX - currentX;
+                const diffY = currentY - startY;
+
+                // Determine if this is a horizontal swipe
+                if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > swipeThreshold) {
+                    event.preventDefault(); // Prevent default scrolling behavior
+                    if (diffX > 0 && currentIndex < sections.length - 1) {
+                        // Swipe left (next section)
+                        currentIndex++;
+                    } else if (diffX < 0 && currentIndex > 0) {
+                        // Swipe right (previous section)
+                        currentIndex--;
+                    } else {
+                        // If at the edge, do nothing
+                        return;
+                    }
+                    isScrolling = true; // Set scrolling flag
+                    sections[currentIndex].scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    setTimeout(() => {
+                        isScrolling = false; // Reset scrolling flag after animation
+                    }, 800);
+                }
+            };
+
+            const handleTouchEnd = () => {
+                startX = 0;
+                startY = 0;
+            };
+
+            const handleWheel = (event) => {
+                event.preventDefault(); // Prevent default scrolling behavior
+                if (isScrolling) return; // Prevent wheel events during scrolling
+                const delta = Math.sign(event.deltaY);
+                if (delta > 0 && currentIndex < sections.length - 1) {
+                    // Scroll down (next section)
+                    currentIndex++;
+                } else if (delta < 0 && currentIndex > 0) {
+                    // Scroll up (previous section)
+                    currentIndex--;
+                } else {
+                    // If at the edge, do nothing
+                    return;
+                }
+                isScrolling = true; // Set scrolling flag
+                sections[currentIndex].scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                setTimeout(() => {
+                    isScrolling = false; // Reset scrolling flag after animation
+                }, 800);
+            };
+
+            container.addEventListener('touchstart', handleTouchStart, { passive: true });
+            container.addEventListener('touchmove', handleTouchMove, { passive: false });
+            container.addEventListener('touchend', handleTouchEnd);
+            container.addEventListener('wheel', handleWheel, { passive: false });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            let startX = 0;
+            let isDragging = false;
+            let isInitialized = false;
+            let isAutoOpeningAllowed = true;
+            let initialSlideDone = false;
+
+            const zipperHandle = document.querySelector('.zipper-handle');
+            const zipContainer = document.querySelector('.zip-container');
+            const zipper = document.querySelector('.zipper');
+            const content = document.querySelector('.content');
+
+            function resetZipperPosition() {
+                zipperHandle.style.left = '0';
+                zipper.style.width = '0';
+                content.style.transform = 'translateX(100%)';
+            }
+
+            function handleStart(e) {
+                e.preventDefault();
+                const touchEvent = e.type.startsWith('touch');
+                startX = touchEvent ? e.touches[0].clientX : e.clientX;
+                isDragging = true;
+
+                if (!isInitialized) {
+                    isInitialized = true;
+                    resetZipperPosition();
+                }
+
+                hideCountdown();
+            }
+
+            function handleMove(e) {
+                if (isDragging) {
+                    const touchEvent = e.type.startsWith('touch');
+                    const currentX = touchEvent ? e.touches[0].clientX : e.clientX;
+                    const deltaX = currentX - startX;
+                    const newWidth = Math.min(Math.max(0, deltaX), zipContainer.offsetWidth);
+                    const unzipPercentage = newWidth / zipContainer.offsetWidth;
+
+                    zipper.style.width = `${newWidth}px`;
+                    zipperHandle.style.left = `${newWidth - zipperHandle.offsetWidth / 2}px`;
+                    content.style.transform = `translateX(${(1 - unzipPercentage) * 100}%)`;
+
+                    if (unzipPercentage < 0.5) {
+                        isAutoOpeningAllowed = true;
+                    }
+                }
+            }
+
+            function handleEnd() {
+                if (isDragging) {
+                    isDragging = false;
+                    const unzipPercentage = zipper.offsetWidth / zipContainer.offsetWidth;
+
+                    if (unzipPercentage >= 0.5 && isAutoOpeningAllowed) {
+                        zipContainer.classList.add('unzip');
+                        startTimer(unzipPercentage);
+                    } else {
+                        zipContainer.classList.remove('unzip');
+                        resetZipperPosition();
+                        stopTimer();
+                        isAutoOpeningAllowed = false;
+                    }
+                }
+            }
+
+            zipperHandle.addEventListener('touchstart', handleStart, { passive: true });
+            zipperHandle.addEventListener('mousedown', handleStart);
+
+            document.addEventListener('touchmove', (e) => {
+                if (isDragging) {
+                    handleMove(e);
+                }
+            }, { passive: true });
+
+            document.addEventListener('mousemove', handleMove);
+
+            document.addEventListener('touchend', handleEnd);
+            document.addEventListener('mouseup', handleEnd);
+
+            let timerInterval;
+            let countdownElement;
+            let countdownActive = false;
+
+            function startTimer(unzipPercentage) {
+                let timerSeconds = 5;
+                countdownActive = true;
+
+                if (countdownElement) {
+                    countdownElement.remove();
+                }
+
+                countdownElement = document.createElement('div');
+                countdownElement.textContent = `Countdown: ${timerSeconds} seconds`;
+                content.appendChild(countdownElement);
+
+                timerInterval = setInterval(function() {
+                    timerSeconds--;
+                    countdownElement.textContent = `Countdown: ${timerSeconds} seconds`;
+
+                    if (timerSeconds <= 0) {
+                                                clearInterval(timerInterval);
+                        countdownActive = false;
+                        if (unzipPercentage >= 0.5 && zipContainer.classList.contains('unzip')) {
+                            window.location.href = 'https://razorpay.com/payment-button/pl_OGrQe9LVBk78uu/view';
+                        }
+                    }
+                }, 1000);
+            }
+
+            function stopTimer() {
+                clearInterval(timerInterval);
+                countdownActive = false;
+
+                if (countdownElement) {
+                    countdownElement.remove();
+                    countdownElement = null;
+                }
+            }
+
+            function hideCountdown() {
+                if (countdownElement) {
+                    countdownElement.remove();
+                    countdownElement = null;
+                }
+            }
+        });
+    </script>
     <script src="script.js"></script>
-        <script src="donate.js"></script>
+    <script src="donate.js"></script>
 </body>
 </html>
+
