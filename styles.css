@@ -88,7 +88,7 @@ a:hover {
   border-radius: 50%;
   cursor: grab;
   z-index: 2;
-  transform: scale(6.3);
+  transform: scale(14.3);
   background-image: url('https://i.ibb.co/Vq0XRWF/Food-Plate-Top-View-Non-Veg-PNG.png');
   background-size: cover; /* Ensure the image covers the element */
   background-position: center; /* Center the image */
