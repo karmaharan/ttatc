@@ -5,6 +5,10 @@ body, html {
   font-family: Arial, sans-serif;
   color: #fff;
   overflow-y: hidden;
+  background-image: url('https://i.ibb.co/4gxDjt7/3c0e6db8-564e-4d13-b7f3-96702c71a7ba.jpg');
+        background-size: cover; /* Ensure the image covers the element */
+      background-position: center; /* Center the image */
+      background-repeat: no-repeat; /* Prevent repeating the image */
 }
 
 .container {
