@@ -118,7 +118,12 @@ a:hover {
     max-height: none; /* Remove the maximum height limit */
     flex: 0 0 100vw; /* Ensure each section takes up the full viewport width */
   }
-
+  
+.section h2 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    animation: fadeIn 2s;
+  
   .sophisticated-image {
     display: block;
     max-height: 49vh !important;
