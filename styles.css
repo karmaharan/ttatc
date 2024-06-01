@@ -6,6 +6,7 @@
   .section {
     max-height: none; /* Remove the maximum height limit */
     flex: 0 0 100vw; /* Ensure each section takes up the full viewport width */
+    max-width: -webkit-fill-available;
   }
 
   .section h2 {
