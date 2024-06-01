@@ -18,7 +18,7 @@
   .sophisticated-image {
     display: block;
     max-height: 49vh !important;
-    max-width: fit-content;
+    max-width: fit-content !important;
     height: auto;
     border-radius: 8px;
     transition: box-shadow 0.3s ease;
