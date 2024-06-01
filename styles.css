@@ -1,3 +1,42 @@
+@media (max-width: 768px) {
+  .container {
+    flex-direction: row; /* Maintain horizontal layout on smaller screens */
+  }
+
+  .section {
+    max-height: none; /* Remove the maximum height limit */
+    flex: 0 0 100vw; /* Ensure each section takes up the full viewport width */
+  }
+  
+.section h2 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    animation: fadeIn 2s;
+  
+  .sophisticated-image {
+    display: block;
+    max-height: 49vh !important;
+    max-width: fit-content;
+    height: auto;
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease;
+    box-shadow: 0 18px 16px rgba(0, 0, 0, 0.8);
+  }
+    .brand-image {
+    display: block;
+    max-height: 48vh !important;
+    max-width: fit-content;
+    height: auto;
+      left: 4vw;
+        position: relative;
+  }
+  
+  .slider {
+display: block;
+  }
+}
+
+  
 body, html {
   margin: 0;
   padding: 0;
