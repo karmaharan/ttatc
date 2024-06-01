@@ -26,7 +26,7 @@
 
   .brand-image {
     display: block;
-    max-height: 48vh !important;
+    max-height: 25vh !important;
     max-width: fit-content !important;
     height: auto;
     left: 4vw;
