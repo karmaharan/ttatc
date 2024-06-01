@@ -89,14 +89,7 @@ body, html {
 .sophisticated-image:hover {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.9);
 }
-.brand-image {
-  display: block;
-  max-width: 24%;
-  height: auto;
-  border-radius: 8px;
-  transition: box-shadow 0.3s ease;
-  box-shadow: 0 18px 16px rgba(0, 0, 0, 0.7);
-}
+
 
 .brand-image:hover {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.9);
@@ -137,14 +130,7 @@ a:hover {
     transition: box-shadow 0.3s ease;
     box-shadow: 0 18px 16px rgba(0, 0, 0, 0.8);
   }
-    .brand-image {
-    display: block;
-    max-height: 48vh !important;
-    max-width: fit-content;
-    height: auto;
-      left: 4vw;
-        position: relative;
-  }
+
   
   .slider {
 display: block;
