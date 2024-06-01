@@ -21,7 +21,7 @@
     }
     @media (max-width: 768px){
        .zip-container {
-          width: 80vw;
+          width: 99vw;
           height: 20vh;
         }
         .zipper-handle{
