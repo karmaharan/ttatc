@@ -30,8 +30,8 @@
     max-height: 25vh !important;
     max-width: fit-content !important;
     height: auto;
-    left: 4vw;
     position: relative;
+    width: 90vw;
   }
 
   .slider {
