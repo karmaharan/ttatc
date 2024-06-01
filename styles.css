@@ -7,12 +7,13 @@
     max-height: none; /* Remove the maximum height limit */
     flex: 0 0 100vw; /* Ensure each section takes up the full viewport width */
   }
-  
-.section h2 {
+
+  .section h2 {
     font-size: 3.5rem;
     margin-bottom: 20px;
     animation: fadeIn 2s;
-  
+  }
+
   .sophisticated-image {
     display: block;
     max-height: 49vh !important;
@@ -22,21 +23,21 @@
     transition: box-shadow 0.3s ease;
     box-shadow: 0 18px 16px rgba(0, 0, 0, 0.8);
   }
-    .brand-image {
+
+  .brand-image {
     display: block;
     max-height: 48vh !important;
     max-width: fit-content;
     height: auto;
-      left: 4vw;
-        position: relative;
+    left: 4vw;
+    position: relative;
   }
-  
+
   .slider {
-display: block;
+    display: block;
   }
 }
 
-  
 body, html {
   margin: 0;
   padding: 0;
@@ -45,9 +46,9 @@ body, html {
   color: #fff;
   overflow-y: hidden;
   background-image: url('https://i.ibb.co/4gxDjt7/3c0e6db8-564e-4d13-b7f3-96702c71a7ba.jpg');
-        background-size: cover; /* Ensure the image covers the element */
-      background-position: center; /* Center the image */
-      background-repeat: no-repeat; /* Prevent repeating the image */
+  background-size: cover; /* Ensure the image covers the element */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent repeating the image */
 }
 
 .container {
@@ -59,22 +60,24 @@ body, html {
   overflow-x: scroll;
   overflow-y: hidden;
 }
+
 .slider {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.5);
-    padding: 10px;
-    border-radius: 10px;
-    text-align: center;
-    display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  display: none;
 }
 
 .trigger {
-    color: white;
-    font-size: 2em;
+  color: white;
+  font-size: 2em;
 }
+
 .section {
   flex: 0 0 100vw; /* Set the width of each section to 100vw (viewport width) */
   display: flex;
@@ -129,10 +132,10 @@ body, html {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.9);
 }
 
-
 .brand-image:hover {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.9);
 }
+
 a:hover {
   color: red;
   text-decoration: underline;
@@ -151,5 +154,3 @@ a:hover {
   transition: box-shadow 0.3s ease;
   box-shadow: 0 18px 16px rgba(0, 0, 0, 0.7);
 }
-/* Media queries */
-
