@@ -139,12 +139,9 @@ a:hover {
   }
     .brand-image {
     display: block;
-    max-height: 49vh !important;
+    max-height: 48vh !important;
     max-width: fit-content;
     height: auto;
-    border-radius: 8px;
-    transition: box-shadow 0.3s ease;
-    box-shadow: 0 18px 16px rgba(0, 0, 0, 0.8);
       left: 4vw;
         position: relative;
   }
