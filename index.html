@@ -1,229 +1,162 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Founder Page</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="don.css">
-</head>
-<body>
-    <div class="container">
-        <div class="section left">
-            <img src="TECH-TANTRA.png" alt="Example Image" class="brand-image" />
-<h2>What is TTATC?</h2>
-<t>|असतो मा सद्गमय|</t>
-<ul>
-<li>Tech Tantra AI Technologies Company (T.T.A.T.C), an Indian AI startup with a "Fully Made in Bharat" mantra. No Outsiders API dependencies.</li>
-<li> We're not just another app company. we aim to harness AI for humanity's betterment across industries.</li>
-<li>We're all about innovation and making a difference. Our goal is to drive positive change in India and beyond using the power of AI.</li>
-<li>At TTATC, we're passionate about using AI to streamline processes, improve efficiency, and create new opportunities across various industries.</li>
-</ul>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="styles.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<body class="text-white" onload="displayRandomQuickReply()"
+  onfocus="displayRandomQuickReply()">
 
+<div class="blob"></div>
+<div class="backdrop"></div> <!-- Added backdrop -->
+<div class="chat-container">
+<div class="bhrmlg" >
+  <img src="https://i.ibb.co/hMPpR9t/BHRAM.png" alt="Founder" class="rounded-full h-40 w-40 mb-4" style="
+position: absolute;
+z-index: -1;
+top: 30%;
+left: 35%;
+transform: scale(1.5) ;                                                     opacity:10%;
+">
 </div>
-        <div class="section middle">
-            <h2>Subham Mukherjee</h2>
-            <div class="clickable" onclick="toggleContent()" style="cursor: pointer;">WHO AM I?</div>
-            <div id="hiddenContent" style="display: none;">
-                <p>Founder/Backend-Dev/CEO OF TTATC</p>
-            </div>
-            <img src="4413921.png" alt="Example Image" class="sophisticated-image" />
-            <t>"Crafted with Art and Developed By Science"</t>
-        </div>
-        <div class="section right">
-            <h2>Donate Us</h2>
-            <t>Content for the right section.</t>
-            <div class="zip-container">
-                <p style="font-family: cursive; color: white; transform: scale(1.5); position: relative;">pass me some food</p>
-                <div class="zipper-handle"></div>
-                <div class="zipper" style="opacity: 0;"></div>
-                <div class="content">
-                    <p>This is the unzipped content.</p>
-                    <p>You can add more content here.</p>
-                </div>
-            </div>
-        </div>
+<div class="messages" id="messages">
+    <div class="message bot-message">
+        <p>Welcome! I am BHRAM AI Chatbot for TTATC official Site :)</p>
     </div>
-    <script>
-        function toggleContent() {
-            var content = document.getElementById('hiddenContent');
-            if (content.style.display === 'none') {
-                content.style.display = 'block';
-            } else {
-                content.style.display = 'none';
-            }
+</div>
+<div id="message-info">
+    <p id="part1">If you have a query that requires assistance from our executives, please start your message with 'q:'. For example: "q: Your query, name: Your name."</p>
+    <p id="part2">Messages starting with 'q:' will be handled by our team, ensuring personalized assistance.</p>
+  </div>
+  
+<div class="input-container">
+    <input type="text" id="user-input" placeholder="Type your message..." maxlength="1500">
+  
+    <button onclick="sendMessage()">Send</button>
+</div>
+<div id="quick-replies">
+<button onclick="insertQuickReply(this)">I'm having trouble logging in</button>
+<button onclick="insertQuickReply(this)">What are your business hours?</button>
+<button onclick="insertQuickReply(this)">latest progress of work?</button>
+<button onclick="insertQuickReply(this)">Custom Fine tuned ChatBot for my Business</button>
+<button onclick="insertQuickReply(this)">I want to know more about you</button>
+<button onclick="insertQuickReply(this)">upcoming projects working on?</button>
+<button onclick="insertQuickReply(this)">contact to you</button>
+<button onclick="insertQuickReply(this)">want some custom tools/softwares for my business</button>
+
+<!-- Add more quick reply buttons as needed -->
+</div>
+</div>
+<div class="content">
+    <section class="mb-8">
+        <h1 class="text-4xl font-bold mb-4 text-white">Tech Tantra AI Technologies Company</h1>
+        <p class="text-lg text-white">Empowering businesses and individual with AI for AI</p>
+    </section>
+
+    <section class="mb-8">
+        <h2 class="text-2xl font-bold mb-4 text-white">Know Us</h2>
+        <p class="text-lg text-white">Tech Tantra AI Technologies Company, also known as TTATC, is truly made in Bharat and made for Bharatiyas. We do not rely on third-party outsider APIs from different countries. We care about your privacy and value your trust, striving to provide worthy products. Our development and background work started in August 2023.</p>
+      </section>
+          
+    <section class="mb-8">
+        <h2 class="text-2xl font-bold mb-4 text-white">We work on</h2>
+        <ul class="list-disc list-inside text-lg text-white">
+            <li>Custom Businesses Solutions with/without AI.</li>
+            <li>Build Own AI Apps</li>
+            <li>Research about new Ideas</li>
+            <li>Fully Cutomised ChatBot Providing all data is in our India's Server</li>
+            <li>No rely on third party API for our AI Apps</li>
+        </ul>
+    </section>
+    <section id="founders" class="mb-8">
+        <h2 class="text-2xl font-bold mb-4 text-white">Know Me</h2>
+        <div class="bg-gray-800 bg-opacity-75 p-4 rounded-lg flex flex-col items-center">
+          <img src="https://i.ibb.co/GVWQ2G5/1px.png" alt="Founder" class="rounded-full h-40 w-40 mb-4">
+          <h3 class="text-2xl font-bold mb-2 text-white">Subham Mukherjee</h3>
+          <p class="text-lg text-white">Founder & CEO</p>
+          <p class="text-lg text-white">
+            Hello, I'm Subham Mukherjee, the Founder & CEO of Tech Tantra AI Technologies. My passion for technology and AI drives me to create innovative solutions for businesses and individuals.
+          </p>
+          <p class="text-lg text-white">
+            With a strong background in software development and AI, I have mastered tools like Unreal Engine and video motion capture technology. My journey includes a three-month internship at Cosmos Maya and roles as a video editor at two startups, which provided valuable insights into startup operations.
+          </p>
+          <p class="text-lg text-white">
+            Recognizing the transformative potential of AI, I leveraged my technical and entrepreneurial skills to create Tech Tantra AI Technologies. Our mission is to drive innovation and efficiency through AI solutions.
+          </p>
+          <p class="text-lg text-white">
+            My tech journey began early, building PCs and creating DIY electronics projects. Even without home internet, I fueled my learning through coding videos and software from cybercafés.
+          </p>
+          <p class="text-lg text-white">
+            Connect with me on <a href="https://www.linkedin.com" class="text-blue-400">LinkedIn</a> or follow me on <a href="https://www.twitter.com" class="text-blue-400">Twitter</a>.
+          </p>
+        </div>
+      </section>
+      <section class="mb-8">
+        <h2 class="text-2xl font-bold mb-4 text-white">Featured Projects</h2>
+        <div class="grid grid-cols-1 gap-4">
+          <div class="bg-gray-800 bg-opacity-75 bg-opacity-75 p-4 rounded-lg">
+            <h3 class="text-xl font-bold mb-2 text-white">Project AI2Business</h3>
+            <p class="text-lg text-white">Custom Fine-Tuned AI ChatBot for customer support, copywriting, and email writing.</p>
+          </div>
+          <div class="bg-gray-800 bg-opacity-75 p-4 rounded-lg">
+            <h3 class="text-xl font-bold mb-2 text-white">Project CustomTools</h3>
+            <p class="text-lg text-white">Fully custom tools: AI-based or without AI tools for businesses.</p>
+          </div>
+          <div class="bg-gray-800 bg-opacity-75 p-4 rounded-lg">
+            <h3 class="text-xl font-bold mb-2 text-white">Project AI2Customer</h3>
+            <p class="text-lg text-white">Work in Progress: A fully AI-based complete health dietitian solution with extensive features.</p>
+          </div>
+          <div class="bg-gray-800 bg-opacity-75 p-4 rounded-lg">
+            <h3 class="text-xl font-bold mb-2 text-white">Project AIniversal (ai for universal)</h3>
+            <p class="text-lg text-white">R&D in Progress: An AI office where you will be the boss of many AI employees—no absenteeism, lower expenses, and no payments required.</p>
+            <p>this can be start of the game-changer.</p>
+          </div>
+        </div>
+      </section>
+      
+      <section class="mb-8">
+        <h2 class="text-2xl font-bold mb-4 text-white">Testimonials</h2>
+        <div class="grid grid-cols-1 gap-4">
+          <div class="bg-gray-800 p-4 rounded-lg">
+            <p class="text-lg text-white">"Tech Tantra AI Technologies provided exceptional AI consulting. Their insights transformed our approach to data analytics."</p>
+            <p class="text-lg text-white">- Client A</p>
+          </div>
+          <div class="bg-gray-800 p-4 rounded-lg">
+            <p class="text-lg text-white">"Working with Tech Tantra AI Technologies was a game-changer for our startup. Their expertise in LLMs helped us achieve significant cost savings."</p>
+            <p class="text-lg text-white">- Client B</p>
+          </div>
+        </div>
+      </section>
+      
+    
+    <section>
+        <h2 class="text-2xl font-bold mb-4 text-white">Contact Us</h2>
+        <p class="text-lg text-white">Email: admin@techtantra.com</p>
+        <p class="text-lg text-white">Phone: +91 9073888611</p>
+    </section>
+    
+
+        </form>
+    </section>
+</div>
+<script src="script.js"></script>
+<script>
+    // Function to check if the user agent indicates a mobile device
+    function isMobileDevice() {
+        return (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
+    }
+
+    // Function to handle redirection if on a mobile device
+    function handleMobileRedirect() {
+        if (isMobileDevice() && window.innerWidth < 768) {
+            // Redirect to another page
+            window.location.href = 'https://example.com/mobile-version';
         }
+    }
 
-        const debounce = (func, delay) => {
-            let debounceTimer;
-            return function() {
-                const context = this;
-                const args = arguments;
-                clearTimeout(debounceTimer);
-                debounceTimer = setTimeout(() => func.apply(context, args), delay);
-            };
-        };
+    // Check on page load
+    handleMobileRedirect();
 
-document.addEventListener('DOMContentLoaded', () => {
-    const container = document.querySelector('.container');
-    const sections = container.querySelectorAll('.section');
-    let currentIndex = 0;
-    let isScrolling = false;
-    let startX = 0, startY = 0;
-    let isDraggingZip = false; // Flag to track zipper dragging
-
-    const swipeThreshold = 50; // Minimum swipe distance to trigger navigation
-
-    const handleTouchStart = (event) => {
-        if (isScrolling || isDraggingZip) return; // Prevent starting a new swipe or zipper drag if already scrolling or dragging zipper
-        startX = event.touches[0].clientX;
-        startY = event.touches[0].clientY;
-    };
-
-    const handleTouchMove = (event) => {
-        if (isScrolling || isDraggingZip) return; // Prevent move events during scrolling or dragging zipper
-        const currentX = event.touches[0].clientX;
-        const currentY = event.touches[0].clientY;
-        const diffX = startX - currentX;
-        const diffY = currentY - startY;
-
-        // Determine if this is a horizontal swipe
-        if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > swipeThreshold) {
-            event.preventDefault(); // Prevent default scrolling behavior
-            if (diffX > 0 && currentIndex < sections.length - 1) {
-                // Swipe left (next section)
-                currentIndex++;
-            } else if (diffX < 0 && currentIndex > 0) {
-                // Swipe right (previous section)
-                currentIndex--;
-            } else {
-                // If at the edge, do nothing
-                return;
-            }
-            isScrolling = true; // Set scrolling flag
-            sections[currentIndex].scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-            setTimeout(() => {
-                isScrolling = false; // Reset scrolling flag after animation
-            }, 800);
-        }
-    };
-
-    const handleTouchEnd = () => {
-        startX = 0;
-        startY = 0;
-    };
-
-    const handleWheel = (event) => {
-        if (isDraggingZip) return; // Prevent wheel events during dragging zipper
-        event.preventDefault(); // Prevent default scrolling behavior
-        if (isScrolling) return; // Prevent wheel events during scrolling
-        const delta = Math.sign(event.deltaY);
-        if (delta > 0 && currentIndex < sections.length - 1) {
-            // Scroll down (next section)
-            currentIndex++;
-        } else if (delta < 0 && currentIndex > 0) {
-            // Scroll up (previous section)
-            currentIndex--;
-        } else {
-            // If at the edge, do nothing
-            return;
-        }
-        isScrolling = true; // Set scrolling flag
-        sections[currentIndex].scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-        });
-        setTimeout(() => {
-            isScrolling = false; // Reset scrolling flag after animation
-        }, 800);
-    };
-
-    container.addEventListener('touchstart', handleTouchStart, { passive: true });
-    container.addEventListener('touchmove', handleTouchMove, { passive: false });
-    container.addEventListener('touchend', handleTouchEnd);
-    container.addEventListener('wheel', handleWheel, { passive: false });
-
-    // Event listeners for zipper dragging
-    const zipperHandle = document.querySelector('.zipper-handle');
-
-    const handleZipperStart = (event) => {
-        event.preventDefault();
-        isDraggingZip = true; // Set dragging zipper flag
-    };
-
-    const handleZipperMove = (event) => {
-        if (!isDraggingZip) return; // Only handle if dragging zipper
-        event.preventDefault(); // Prevent default scrolling behavior
-        // Handle zipper dragging logic here
-    };
-
-    const handleZipperEnd = () => {
-        isDraggingZip = false; // Reset dragging zipper flag
-    };
-
-    zipperHandle.addEventListener('touchstart', handleZipperStart);
-    zipperHandle.addEventListener('mousedown', handleZipperStart);
-
-    document.addEventListener('touchmove', handleZipperMove);
-    document.addEventListener('mousemove', handleZipperMove);
-
-    document.addEventListener('touchend', handleZipperEnd);
-    document.addEventListener('mouseup', handleZipperEnd);
-
-
-            let timerInterval;
-            let countdownElement;
-            let countdownActive = false;
-
-            function startTimer(unzipPercentage) {
-                let timerSeconds = 5;
-                countdownActive = true;
-
-                if (countdownElement) {
-                    countdownElement.remove();
-                }
-
-                countdownElement = document.createElement('div');
-                countdownElement.textContent = `Countdown: ${timerSeconds} seconds`;
-                container.appendChild(countdownElement);
-
-                timerInterval = setInterval(function() {
-                    timerSeconds--;
-                    countdownElement.textContent = `Countdown: ${timerSeconds} seconds`;
-
-                    if (timerSeconds <= 0) {
-                        clearInterval(timerInterval);
-                        countdownActive = false;
-                        if (unzipPercentage >= 0.5 && zipContainer.classList.contains('unzip')) {
-                            window.location.href = 'https://razorpay.com/payment-button/pl_OGrQe9LVBk78uu/view';
-                        }
-                    }
-                }, 1000);
-            }
-
-            function stopTimer() {
-                clearInterval(timerInterval);
-                countdownActive = false;
-
-                if (countdownElement) {
-                    countdownElement.remove();
-                    countdownElement = null;
-                }
-            }
-
-            function hideCountdown() {
-                if (countdownElement) {
-                    countdownElement.remove();
-                    countdownElement = null;
-                }
-            }
-        });
-    </script>
-    <script src="script.js"></script>
-    <script src="donate.js"></script>
-</body>
-</html>
-
+    // Optionally, you can check again on window resize if needed
+    window.addEventListener('resize', function() {
+        handleMobileRedirect();
+    });
+</script>
