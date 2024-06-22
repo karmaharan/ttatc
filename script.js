@@ -25,6 +25,10 @@ async function sendMessage() {
     // Scroll to the bottom
     messagesDiv.scrollTop = messagesDiv.scrollHeight;
     
+    // Show loading animation
+    const loadingLine = document.getElementById('loading-line');
+    loadingLine.style.display = 'block';
+    
     try {
         // Send message to API
         const response = await fetch('https://clean-rodent-stable.ngrok-free.app/ask', {
@@ -41,6 +45,9 @@ async function sendMessage() {
 
         const data = await response.json();
         
+        // Hide loading animation
+        loadingLine.style.display = 'none';
+        
         // Update userId if it's the first message
         if (!userId) {
             userId = data.user_id;
@@ -53,6 +60,8 @@ async function sendMessage() {
         messagesDiv.appendChild(botMessageDiv);
     } catch (error) {
         console.error('Error:', error);
+        // Hide loading animation
+        loadingLine.style.display = 'none';
         // Display error message in chat
         const errorDiv = document.createElement('div');
         errorDiv.classList.add('message', 'error-message');
@@ -63,7 +72,6 @@ async function sendMessage() {
     // Scroll to the bottom
     messagesDiv.scrollTop = messagesDiv.scrollHeight;
 }
-
 
 function displayRandomQuickReply() {
     const quickReplies = document.getElementById('quick-replies');
