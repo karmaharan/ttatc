@@ -59,14 +59,15 @@ body {
     position: absolute;
     text-align: center;
     top: 50%;
-    left: 36%;
+    left: 53%;
     transform: translate(-50%, -50%);
-    z-index: 1; /* Make sure content is on top */
-    max-height: 80vh; /* Set a max height for the content */
-    overflow-y: auto; /* Enable vertical scrolling */
-    padding: 1rem; /* Add padding for better appearance */
-    scrollbar-width: thin; /* Width of the scrollbar */
-    scrollbar-color: rgba(255, 255, 255, 0) rgba(255, 255, 255, 0); /* Color of the scrollbar (invisible) */
+    z-index: 1;
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 1rem;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0) rgba(255, 255, 255, 0);
+    width: 1163px;
 }
 .content::-webkit-scrollbar {
     width: 6px; /* Width of the scrollbar */
@@ -85,17 +86,33 @@ body {
     max-width: 600px;
     margin: 20px auto;
     padding: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid rgba(204, 204, 204, 0); /* Transparent border */
     border-radius: 8px;
-    background: #1414142e;
-    position: fixed; /* Changed to fixed for better positioning */
-    bottom: 20px; /* Adjusted for bottom positioning */
-    right: 20px; /* Adjusted for right positioning */
-    z-index: 10; /* Ensure chat is above other content */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Added box shadow */
-    scrollbar-width: thin; /* Width of the scrollbar */
-    scrollbar-color: rgba(255, 255, 255, 0) rgba(255, 255, 255, 0); /* Color of the scrollbar (invisible) */
+    background: rgba(20, 20, 20, 0); /* Transparent background */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10;
+    overflow: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0) rgba(255, 255, 255, 0);
+    height: 80px; /* Set initial collapsed height */
+    transition: height 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for height, background, border, and box-shadow */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0); /* No shadow initially */
 }
+
+.chat-container.expanded {
+    height: auto; /* Expand to fit content */
+    background: rgba(20, 20, 20, 0.75); /* Dark semi-transparent background when expanded */
+    border: 1px solid #ccc; /* Solid border when expanded */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Box shadow when expanded */
+    bottom: 20px; /* Ensure it stays at the same bottom position */
+    transform: translateY(0); /* Reset any translateY transformation */
+    backdrop-filter: blur(3px);
+}
+
+
+
 
 .messages {
 margin-bottom: 10px;
@@ -115,6 +132,7 @@ margin-bottom: 10px;
 background-color: #ffffff70;
 text-align: left;
 color:black;
+margin-top: 2px;
 }
 
 .user-message {
@@ -219,3 +237,19 @@ z-index: -1;
       opacity: 0.6;
     }
   }
+
+
+  #name-content {
+
+
+    position: relative;
+    border-radius: 17px;
+text-align: center;
+    overflow: hidden; /* Ensures the glow does not overflow */
+
+  }
+  
+
+  
+
+  
