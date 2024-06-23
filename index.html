@@ -1,173 +1,215 @@
-<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-<title>Tech Tantra AI Technologies Company (TTATC) - विज्ञानं अनिर्वचनीयम् अस्ति</title>
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://whois.techtantra.tech">
-<meta name="author" content="Tech Tantra AI Technologies Company">
-<meta property="og:description" content="Pioneering AI innovation with cutting-edge solutions. Experience BHRAM AI, our advanced AI customer service. विज्ञानं अनिर्वचनीयम् अस्ति">
-<meta property="og:image" content="https://whois.techtantra.tech/og-image.jpg">
-<meta property="og:url" content="https://whois.techtantra.tech">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Tech Tantra AI Technologies Company (TTATC) - MADE IN BHARAT">
-<link rel="icon" href="https://i.ibb.co/ZBNCYJk/ttntra.png" type="image/x-icon">
-<link rel="shortcut icon" href="https://i.ibb.co/ZBNCYJk/ttntra.png" type="image/x-icon">
-<meta name="description" content="Tech Tantra AI Technologies Company (TTATC) - MADE IN BHARAT. Pioneering AI innovation with cutting-edge solutions. Experience BHRAM AI, our advanced AI customer service.">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="styles.css">
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<body class="text-white" onload="displayRandomQuickReply()"
-  onfocus="displayRandomQuickReply()">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech Tantra AI Technologies Company</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body class="text-white" onload="displayRandomQuickReply()" onfocus="displayRandomQuickReply()">
 
 <div class="blob"></div>
 <div class="backdrop"></div> <!-- Added backdrop -->
-<div class="chat-container">
-<div class="bhrmlg" >
-  <img src="https://i.ibb.co/hMPpR9t/BHRAM.png" alt="Founder" class="rounded-full h-40 w-40 mb-4" style="
-position: absolute;
-z-index: -1;
-top: 30%;
-left: 35%;
-transform: scale(1.5) ;opacity:10%;
-">
-</div>
-<div class="messages" id="messages">
+
+<div class="chat-container" id="chat-container">
+  <div class="bg-gray-800 bg-opacity-75 p-4 rounded-lg flex flex-col items-center" id="name-content">
+    
+    <!-- Content for your 'name' div goes here -->
+    <p>TALK WITH US USING OUR AI CUSTOMER SERVERVICE "BHRAM AI".</p>
+  </div>
+  <div class="bhrmlg" id="toggle-chat">
+    <img src="https://i.ibb.co/hMPpR9t/BHRAM.png" alt="Founder" class="rounded-full h-40 w-40 mb-4" style="
+    position: absolute;
+    z-index: -1;
+    top: 30%;
+    left: 35%;
+    transform: scale(1.5);
+    opacity: 10%;
+    cursor: pointer;
+    ">
+  </div>
+  <div class="messages" id="messages">
     <div class="message bot-message">
-        <p>Welcome! I am BHRAM AI Chatbot for TTATC official Site :)</p>
+      <p>Welcome! I am BHRAM AI Chatbot for TTATC official Site :)</p>
     </div>
-</div>
-<div id="message-info">
+  </div>
+  <div id="message-info">
     <p id="part1">If you have a query that requires assistance from our executives, please start your message with 'q:'. For example: "q: Your query, name: Your name."</p>
     <p id="part2">Messages starting with 'q:' will be handled by our team, ensuring personalized assistance.</p>
   </div>
-    <div class="ai-line" id="loading-line" style="display: none;"></div>
-<div class="input-container">
+  <div class="ai-line" id="loading-line" style="display: none;"></div>
+  <div class="input-container">
     <input type="text" id="user-input" placeholder="Type your message..." maxlength="1500">
-  
     <button onclick="sendMessage()">Send</button>
+  </div>
+  <div id="quick-replies">
+    <button onclick="insertQuickReply(this)">I'm having trouble logging in</button>
+    <button onclick="insertQuickReply(this)">What are your business hours?</button>
+    <button onclick="insertQuickReply(this)">latest progress of work?</button>
+    <button onclick="insertQuickReply(this)">Custom Fine tuned ChatBot for my Business</button>
+    <button onclick="insertQuickReply(this)">I want to know more about you</button>
+    <button onclick="insertQuickReply(this)">upcoming projects working on?</button>
+    <button onclick="insertQuickReply(this)">contact to you</button>
+    <button onclick="insertQuickReply(this)">want some custom tools/softwares for my business</button>
+    <!-- Add more quick reply buttons as needed -->
+  </div>
 </div>
-<div id="quick-replies">
-<button onclick="insertQuickReply(this)">What are your business hours?</button>
-<button onclick="insertQuickReply(this)">latest progress of work?</button>
-<button onclick="insertQuickReply(this)">Custom Fine tuned ChatBot for my Business</button>
-<button onclick="insertQuickReply(this)">I want to know more about you</button>
-<button onclick="insertQuickReply(this)">upcoming projects working on?</button>
-<button onclick="insertQuickReply(this)">contact to you</button>
-<button onclick="insertQuickReply(this)">want some custom tools/softwares for my business</button>
-<button onclick="insertQuickReply(this)">want some custom tools/softwares for my business</button>
-<!-- Add more quick reply buttons as needed -->
-</div>
-</div>
+
 <div class="content">
-    <section class="mb-8">
-        <h1 class="text-4xl font-bold mb-4 text-white">Tech Tantra AI Technologies Company</h1>
-        <p class="text-lg text-white">Empowering businesses and individual with AI for AI</p>
-    </section>
+  <section class="mb-8">
+    <h1 class="text-4xl font-bold mb-4 text-white">Tech Tantra AI Technologies Company</h1>
+    <p class="text-lg text-white">Empowering businesses and individuals with AI for AI</p>
+  </section>
 
-    <section class="mb-8">
-        <h2 class="text-2xl font-bold mb-4 text-white">Know Us</h2>
-        <p class="text-lg text-white">Tech Tantra AI Technologies Company, also known as TTATC, is truly made in Bharat and made for Bharatiyas. We do not rely on third-party outsider APIs from different countries. We care about your privacy and value your trust, striving to provide worthy products. Our development and background work started in August 2023.</p>
-      </section>
-          
-    <section class="mb-8">
-        <h2 class="text-2xl font-bold mb-4 text-white">We work on</h2>
-        <ul class="list-disc list-inside text-lg text-white">
-            <li>Custom Businesses Solutions with/without AI.</li>
-            <li>Build Own AI Apps</li>
-            <li>Research about new Ideas</li>
-            <li>Fully Cutomised ChatBot Providing all data is in our India's Server</li>
-            <li>No rely on third party API for our AI Apps</li>
-        </ul>
-    </section>
-    <section id="founders" class="mb-8">
-        <h2 class="text-2xl font-bold mb-4 text-white">Know Me</h2>
-        <div class="bg-gray-800 bg-opacity-75 p-4 rounded-lg flex flex-col items-center">
-          <img src="https://i.ibb.co/GVWQ2G5/1px.png" alt="Founder" class="rounded-full h-40 w-40 mb-4">
-          <h3 class="text-2xl font-bold mb-2 text-white">Subham Mukherjee</h3>
-          <p class="text-lg text-white">Founder & CEO</p>
-          <p class="text-lg text-white">
-            Hello, I'm Subham Mukherjee, the Founder & CEO of Tech Tantra AI Technologies. My passion for technology and AI drives me to create innovative solutions for businesses and individuals.
-          </p>
-          <p class="text-lg text-white">
-            With a strong background in software development and AI, I have mastered tools like Unreal Engine and video motion capture technology. My journey includes a three-month internship at Cosmos Maya and roles as a video editor at two startups, which provided valuable insights into startup operations.
-          </p>
-          <p class="text-lg text-white">
-            Recognizing the transformative potential of AI, I leveraged my technical and entrepreneurial skills to create Tech Tantra AI Technologies. Our mission is to drive innovation and efficiency through AI solutions.
-          </p>
-          <p class="text-lg text-white">
-            My tech journey began early, building PCs and creating DIY electronics projects. Even without home internet, I fueled my learning through coding videos and software from cybercafés.
-          </p>
-          <p class="text-lg text-white">
-            Connect with me on <a href="https://www.linkedin.com" class="text-blue-400">LinkedIn</a> or follow me on <a href="https://www.twitter.com" class="text-blue-400">Twitter</a>.
-          </p>
-        </div>
-      </section>
-      <section class="mb-8">
-        <h2 class="text-2xl font-bold mb-4 text-white">Featured Projects</h2>
-        <div class="grid grid-cols-1 gap-4">
-          <div class="bg-gray-800 bg-opacity-75 bg-opacity-75 p-4 rounded-lg">
-            <h3 class="text-xl font-bold mb-2 text-white">Project AI2Business</h3>
-            <p class="text-lg text-white">Custom Fine-Tuned AI ChatBot for customer support, copywriting, and email writing.</p>
-          </div>
-          <div class="bg-gray-800 bg-opacity-75 p-4 rounded-lg">
-            <h3 class="text-xl font-bold mb-2 text-white">Project CustomTools</h3>
-            <p class="text-lg text-white">Fully custom tools: AI-based or without AI tools for businesses.</p>
-          </div>
-          <div class="bg-gray-800 bg-opacity-75 p-4 rounded-lg">
-            <h3 class="text-xl font-bold mb-2 text-white">Project AI2Customer</h3>
-            <p class="text-lg text-white">Work in Progress: A fully AI-based complete health dietitian solution with extensive features.</p>
-          </div>
-          <div class="bg-gray-800 bg-opacity-75 p-4 rounded-lg">
-            <h3 class="text-xl font-bold mb-2 text-white">Project AIniversal (ai for universal)</h3>
-            <p class="text-lg text-white">R&D in Progress: An AI office where you will be the boss of many AI employees—no absenteeism, lower expenses, and no payments required.</p>
-            <p>this can be start of the game-changer.</p>
-          </div>
-        </div>
-      </section>
-      
-      <section class="mb-8">
-        <h2 class="text-2xl font-bold mb-4 text-white">Testimonials</h2>
-        <div class="grid grid-cols-1 gap-4">
-          <div class="bg-gray-800 p-4 rounded-lg">
-            <p class="text-lg text-white">"Tech Tantra AI Technologies provided exceptional AI consulting. Their insights transformed our approach to data analytics."</p>
-            <p class="text-lg text-white">- Client A</p>
-          </div>
-          <div class="bg-gray-800 p-4 rounded-lg">
-            <p class="text-lg text-white">"Working with Tech Tantra AI Technologies was a game-changer for our startup. Their expertise in LLMs helped us achieve significant cost savings."</p>
-            <p class="text-lg text-white">- Client B</p>
-          </div>
-        </div>
-      </section>
-      
-    
-    <section>
-        <h2 class="text-2xl font-bold mb-4 text-white">Contact Us</h2>
-        <p class="text-lg text-white">Email: admin@techtantra.com</p>
-        <p class="text-lg text-white">Phone: +91 9073888611</p>
-    </section>
-    
+  <section class="mb-8">
+    <h2 class="text-2xl font-bold mb-4 text-white">Know Us</h2>
+    <p class="text-lg text-white">Tech Tantra AI Technologies Company, also known as TTATC, is truly made in Bharat and made for Bharatiyas. We do not rely on third-party outsider APIs from different countries. We care about your privacy and value your trust, striving to provide worthy products. Our development and background work started in August 2023.</p>
+  </section>
 
-        </form>
-    </section>
+  <section class="mb-8">
+    <h2 class="text-2xl font-bold mb-4 text-white">We work on</h2>
+    <ul class="list-disc list-inside text-lg text-white">
+      <li>Custom Businesses Solutions with/without AI.</li>
+      <li>Build Own AI Apps</li>
+      <li>Research about new Ideas</li>
+      <li>Fully Customized ChatBot Providing all data is in our India's Server</li>
+      <li>No rely on third party API for our AI Apps</li>
+    </ul>
+  </section>
+
+  <section id="founders" class="mb-8">
+    <h2 class="text-2xl font-bold mb-4 text-white">Know Me</h2>
+    <div class="bg-gray-800 bg-opacity-75 p-4 rounded-lg flex flex-col items-center">
+      <img src="https://i.ibb.co/GVWQ2G5/1px.png" alt="Founder" class="rounded-full h-40 w-40 mb-4">
+      <h3 class="text-2xl font-bold mb-2 text-white">Subham Mukherjee</h3>
+      <p class="text-lg text-white">Founder & CEO</p>
+      <p class="text-lg text-white">
+        Hello, I'm Subham Mukherjee, the Founder & CEO of Tech Tantra AI Technologies. My passion for technology and AI drives me to create innovative solutions for businesses and individuals.
+      </p>
+      <p class="text-lg text-white">
+        With a strong background in software development and AI, I have mastered tools like Unreal Engine and video motion capture technology. My journey includes a three-month internship at Cosmos Maya and roles as a video editor at two startups, which provided valuable insights into startup operations.
+      </p>
+      <p class="text-lg text-white">
+        Recognizing the transformative potential of AI, I leveraged my technical and entrepreneurial skills to create Tech Tantra AI Technologies. Our mission is to drive innovation and efficiency through AI solutions.
+      </p>
+      <p class="text-lg text-white">
+        My tech journey began early, building PCs and creating DIY electronics projects. Even without home internet, I fueled my learning through coding videos and software from cybercafés.
+      </p>
+      <p class="text-lg text-white">
+        Connect with me on <a href="https://www.linkedin.com" class="text-blue-400">LinkedIn</a> or follow me on <a href="https://www.twitter.com" class="text-blue-400">Twitter</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-2xl font-bold mb-4 text-white">Featured Projects</h2>
+    <div class="grid grid-cols-1 gap-4">
+      <div class="bg-gray-800 bg-opacity-75 bg-opacity-75 p-4 rounded-lg">
+        <h3 class="text-xl font-bold mb-2 text-white">Project AI2Business</h3>
+        <p class="text-lg text-white">Custom Fine-Tuned AI ChatBot for customer support, copywriting, and email writing.</p>
+      </div>
+      <div class="bg-gray-800 bg-opacity-75 p-4 rounded-lg">
+        <h3 class="text-xl font-bold mb-2 text-white">Project CustomTools</h3>
+        <p class="text-lg text-white">Fully custom tools: AI-based or without AI tools for businesses.</p>
+      </div>
+      <div class="bg-gray-800 bg-opacity-75 p-4 rounded-lg">
+        <h3 class="text-xl font-bold mb-2 text-white">Project AI2Customer</h3>
+        <p class="text-lg text-white">Work in Progress: A fully AI-based complete health dietitian solution with extensive features.</p>
+      </div>
+      <div class="bg-gray-800 bg-opacity-75 p-4 rounded-lg">
+        <h3 class="text-xl font-bold mb-2 text-white">Project AIniversal (ai for universal)</h3>
+        <p class="text-lg text-white">R&D in Progress: An AI office where you will be the boss of many AI employees—no absenteeism, lower expenses, and no payments required.</p>
+        <p>this can be start of the game-changer.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-2xl font-bold mb-4 text-white">Testimonials</h2>
+    <div class="grid grid-cols-1 gap-4">
+      <div class="bg-gray-800 p-4 rounded-lg">
+        <p class="text-lg text-white">"Tech Tantra AI Technologies provided exceptional AI consulting. Their insights transformed our approach to data analytics."</p>
+        <p class="text-lg text-white">- Client A</p>
+      </div>
+      <div class="bg-gray-800 p-4 rounded-lg">
+        <p class="text-lg text-white">"Working with Tech Tantra AI Technologies was a game-changer for our startup. Their expertise in LLMs helped us achieve significant cost savings."</p>
+        <p class="text-lg text-white">- Client B</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="text-2xl font-bold mb-4 text-white">Contact Us</h2>
+    <p class="text-lg text-white">Email: admin@techtantra.com</p>
+    <p class="text-lg text-white">Phone: +91 9073888611</p>
+  </section>
 </div>
+
 <script src="script.js"></script>
 <script>
-    // Function to check if the user agent indicates a mobile device
-    function isMobileDevice() {
-        return (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
-    }
+  // Function to check if the user agent indicates a mobile device
+  function isMobileDevice() {
+    return (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
+  }
 
-    // Function to handle redirection if on a mobile device
-    function handleMobileRedirect() {
-        if (isMobileDevice() && window.innerWidth < 768) {
-            // Redirect to another page
-            window.location.href = 'https://example.com/mobile-version';
-        }
+  // Function to handle redirection if on a mobile device
+  function handleMobileRedirect() {
+    if (isMobileDevice() && window.innerWidth < 768) {
+      // Redirect to another page
+      window.location.href = 'https://example.com/mobile-version';
     }
+  }
 
-    // Check on page load
+  // Check on page load
+  handleMobileRedirect();
+
+  // Optionally, you can check again on window resize if needed
+  window.addEventListener('resize', function() {
     handleMobileRedirect();
+  });
 
-    // Optionally, you can check again on window resize if needed
-    window.addEventListener('resize', function() {
-        handleMobileRedirect();
+  document.addEventListener('DOMContentLoaded', function() {
+  const chatContainer = document.getElementById('chat-container');
+  const nameContent = document.getElementById('name-content');
+  const toggleChat = document.getElementById('toggle-chat');
+  let isExpanded = false;
+
+  // Function to toggle chat container visibility
+  function toggleChatContainer() {
+    isExpanded = !isExpanded;
+    chatContainer.classList.toggle('expanded', isExpanded);
+    nameContent.style.display = isExpanded ? 'none' : 'block'; // Hide name when chat is expanded
+  }
+
+  // Event listener for toggle-chat
+  if (toggleChat) {
+    toggleChat.addEventListener('click', function(e) {
+      e.stopPropagation(); // Prevents document click event from immediately closing
+      toggleChatContainer();
     });
+  }
+
+  // Event listener for name-content
+  if (nameContent) {
+    nameContent.addEventListener('click', function(e) {
+      e.stopPropagation(); // Prevents document click event from immediately closing
+      toggleChatContainer();
+    });
+  }
+
+  // Event listener to close chat container when clicking outside
+  document.body.addEventListener('click', function(e) {
+    if (isExpanded && e.target !== toggleChat && e.target !== nameContent && !chatContainer.contains(e.target)) {
+      toggleChatContainer();
+    }
+  });
+
+  // Show name-content initially when chat is minimized
+  nameContent.style.display = 'block';
+});
+
 </script>
+</body>
+</html>
