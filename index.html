@@ -20,11 +20,11 @@
     <p>TALK WITH US USING OUR AI CUSTOMER SERVERVICE "BHRAM AI".</p>
   </div>
   <div class="bhrmlg" id="toggle-chat">
-    <img src="https://i.ibb.co/hMPpR9t/BHRAM.png" alt="Founder" class="rounded-full h-40 w-40 mb-4" style="
+    <img src="https://i.ibb.co/hMPpR9t/BHRAM.png" alt="Bhram" class="rounded-full h-40 w-40 mb-4" style="
     position: absolute;
     z-index: -1;
-    top: 48%;
-    left: 35%;
+    top: 30%;
+    left: 25%;
     transform: scale(1.5);
     opacity: 10%;
     cursor: pointer;
@@ -35,10 +35,7 @@
       <p>Welcome! I am BHRAM AI Chatbot for TTATC official Site :)</p>
     </div>
   </div>
-  <div id="message-info">
-    <p id="part1">If you have a query that requires assistance from our executives, please start your message with 'q:'. For example: "q: Your query, name: Your name."</p>
-    <p id="part2">Messages starting with 'q:' will be handled by our team, ensuring personalized assistance.</p>
-  </div>
+
   <div class="ai-line" id="loading-line" style="display: none;"></div>
   <div class="input-container">
     <input type="text" id="user-input" placeholder="Type your message..." maxlength="1500">
@@ -70,12 +67,16 @@
 
   <section class="mb-8">
     <h2 class="text-2xl font-bold mb-4 text-white">We work on</h2>
-    <ul class="list-disc list-inside text-lg text-white">
-      <li>Custom Businesses Solutions with/without AI.</li>
+    <ul class="list-disc list-inside text-lg text-white" style="
+    text-align: left;
+
+">
+
       <li>Build Own AI Apps</li>
       <li>Research about new Ideas</li>
-      <li>Fully Customized ChatBot Providing all data is in our India's Server</li>
+      <li>Custom Businesses Solutions with/without AI.</li>
       <li>No rely on third party API for our AI Apps</li>
+      <li>Fully Customized ChatBot Providing all data is in our India's Server</li>
     </ul>
   </section>
 
@@ -149,26 +150,7 @@
 
 <script src="script.js"></script>
 <script>
-  // Function to check if the user agent indicates a mobile device
-  function isMobileDevice() {
-    return (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
-  }
 
-  // Function to handle redirection if on a mobile device
-  function handleMobileRedirect() {
-    if (isMobileDevice() && window.innerWidth < 768) {
-      // Redirect to another page
-      window.location.href = 'https://example.com/mobile-version';
-    }
-  }
-
-  // Check on page load
-  handleMobileRedirect();
-
-  // Optionally, you can check again on window resize if needed
-  window.addEventListener('resize', function() {
-    handleMobileRedirect();
-  });
 
   document.addEventListener('DOMContentLoaded', function() {
   const chatContainer = document.getElementById('chat-container');
