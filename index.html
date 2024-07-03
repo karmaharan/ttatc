@@ -10,6 +10,84 @@ content="width=device-width, initial-scale=0.9, maximum-scale=1.0, user-scalable
   <link rel="stylesheet" type="text/css" href="styles.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
+<style>  @keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+
+.app-banner::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.app-icon {
+  width: 100px;
+  height: 100px;
+  background-image: url('https://i.ibb.co/542BxDF/icon.webp');
+  border-radius: 25px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  margin-bottom: 20px;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+  background-size: cover;
+  background-position: center;
+}
+
+.app-icon:hover {
+  transform: scale(1.1);
+}
+
+.app-name {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.app-description {
+  font-size: 16px;
+  font-weight: 300;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.download-btn {
+  background-color: rgba(255,255,255,0.2);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+  letter-spacing: 1px;
+}
+
+.download-btn:hover {
+  background-color: white;
+  color: #e73c7e;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}</style>
 <body class="text-white" onload="displayRandomQuickReply()" onfocus="displayRandomQuickReply()">
 
 <div class="blob"></div>
@@ -57,6 +135,15 @@ content="width=device-width, initial-scale=0.9, maximum-scale=1.0, user-scalable
 </div>
 
 <div class="content">
+  <section class="mb-8">
+  <div class="app-banner">
+    <div class="app-icon"></div>
+    <div class="app-name">Vidilyzer</div>
+    <div class="app-description">Get concise summaries and chat with the AI on your favorite YouTube videos</div>
+    <a href="https://websim.ai/apps/ethereal" class="download-btn">Experience Vidilyzer</a>
+  </div>
+</section>
+
   <section class="mb-8">
     <h1 class="text-4xl font-bold mb-4 text-white">Tech Tantra AI Technologies Company</h1>
     <p class="text-lg text-white">Empowering businesses and individuals with AI for AI</p>
