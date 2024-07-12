@@ -50,7 +50,7 @@
 
 <script>
   function fetchBlogPosts() {
-    fetch('/blog')
+    fetch('https://clean-rodent-stable.ngrok-free.app/blog')
       .then(response => response.json())
       .then(data => {
         const blogPostsContainer = document.getElementById('blog-posts');
