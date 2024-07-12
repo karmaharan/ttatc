@@ -49,30 +49,25 @@
 </div>
 
 <script>
-  function fetchBlogPosts() {
-    fetch('https://clean-rodent-stable.ngrok-free.app/blog')
-      .then(response => response.json())
-      .then(data => {
-        const blogPostsContainer = document.getElementById('blog-posts');
-        blogPostsContainer.innerHTML = '';
-        data.blog_content.forEach((post, index) => {
-          const postElement = document.createElement('div');
-          postElement.className = 'bg-gray-800 bg-opacity-75 p-4 rounded-lg';
-          postElement.innerHTML = `
-            <h3 class="text-xl font-bold mb-2 text-white">Blog Post #${index + 1}</h3>
-            <p class="text-lg text-white">${post}</p>
-          `;
-          blogPostsContainer.appendChild(postElement);
-        });
-      })
-      .catch(error => {
-        console.error('Error:', error);
-        document.getElementById('blog-posts').innerHTML = '<p class="text-red-500">Failed to load blog posts. Please try again later.</p>';
-      });
-  }
-
-  // Fetch posts when the page loads
-  fetchBlogPosts();
+function fetchBlogPosts() {
+  console.log("Attempting to fetch blog posts...");
+  fetch('https://clean-rodent-stable.ngrok-free.app/blog')
+    .then(response => {
+      console.log("Received response:", response);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log("Parsed data:", data);
+      // Your existing code to display the data
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('blog-posts').innerHTML = '<p class="text-red-500">Failed to load blog posts. Please try again later.</p>';
+    });
+}
 </script>
 
 </body>
