@@ -17,25 +17,33 @@
     </div>
 
     <script>
-        const API_URL = 'https://clean-rodent-stable.ngrok-free.app/blog';
+        const API_URL = 'https://clean-rodent-stable.ngrok-free.app';
 
         async function fetchBlogPosts() {
             try {
                 const response = await fetch(`${API_URL}/blog`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
                 const data = await response.json();
                 const blogPostsContainer = document.getElementById('blogPosts');
                 blogPostsContainer.innerHTML = '';
-                data.blog_content.forEach((post, index) => {
-                    const postElement = document.createElement('div');
-                    postElement.className = 'bg-white p-4 rounded shadow';
-                    postElement.innerHTML = `
-                        <h3 class="font-semibold">Post #${index + 1}</h3>
-                        <p>${post}</p>
-                    `;
-                    blogPostsContainer.appendChild(postElement);
-                });
+                if (data.blog_content && data.blog_content.length > 0) {
+                    data.blog_content.forEach((post, index) => {
+                        const postElement = document.createElement('div');
+                        postElement.className = 'bg-white p-4 rounded shadow';
+                        postElement.innerHTML = `
+                            <h3 class="font-semibold">Post #${index + 1}</h3>
+                            <p>${post}</p>
+                        `;
+                        blogPostsContainer.appendChild(postElement);
+                    });
+                } else {
+                    blogPostsContainer.innerHTML = '<p>No blog posts found.</p>';
+                }
             } catch (error) {
                 console.error('Error fetching blog posts:', error);
+                document.getElementById('blogPosts').innerHTML = '<p class="text-red-500">Error loading blog posts. Please try again later.</p>';
             }
         }
 
@@ -60,7 +68,7 @@
                     fetchBlogPosts();
                 } else {
                     const errorData = await response.json();
-                    alert(`Error adding blog post: ${errorData.error}`);
+                    alert(`Error adding blog post: ${errorData.error || 'Unknown error'}`);
                 }
             } catch (error) {
                 console.error('Error adding blog post:', error);
