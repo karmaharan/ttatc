@@ -33,12 +33,14 @@ async function fetchBlogPosts() {
             throw new TypeError('Expected JSON response from server');
         }
 
-        const data = await response.json();
+        const data = await response.text();
+        const jsonData = JSON.parse(data);
+        
         const blogPostsContainer = document.getElementById('blogPosts');
         blogPostsContainer.innerHTML = '';
 
-        if (data.blog_content && data.blog_content.length > 0) {
-            data.blog_content.forEach((post, index) => {
+        if (jsonData.blog_content && jsonData.blog_content.length > 0) {
+            jsonData.blog_content.forEach((post, index) => {
                 const postElement = document.createElement('div');
                 postElement.className = 'bg-white p-4 rounded shadow';
                 postElement.innerHTML = `
@@ -55,6 +57,7 @@ async function fetchBlogPosts() {
         document.getElementById('blogPosts').innerHTML = '<p class="text-red-500">Error loading blog posts. Please try again later.</p>';
     }
 }
+
      // Fetch blog posts when the page loads
         fetchBlogPosts();
     </script>
