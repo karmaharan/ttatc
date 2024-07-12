@@ -20,29 +20,29 @@
   </section>
 </div>
 
-<script>
-  $(document).ready(function() {
-    $.ajax({
-      url: 'https://clean-rodent-stable.ngrok-free.app/blog',
-      method: 'GET',
-      success: function(data) {
-        const blogPosts = data;
-        blogPosts.forEach(function(post, index) {
-          const blogPost = `
-            <article class="bg-gray-800 p-6 rounded-lg">
-              <h2 class="text-2xl font-bold mb-2">Blog Post ${index + 1}</h2>
-              <p class="text-base">${post.replace(/\n/g, '<br>')}</p>
-            </article>
-          `;
-          $('#blog-posts').append(blogPost);
-        });
-      },
-      error: function(error) {
-        console.error('Error fetching blog posts:', error);
-      }
+  <script>
+    $(document).ready(function() {
+      $.ajax({
+        url: 'https://clean-rodent-stable.ngrok-free.app/blog',
+        method: 'GET',
+        dataType: 'json', // Expecting JSON response
+        success: function(data) {
+          // Assuming data is an array of blog post strings
+          data.forEach(function(post, index) {
+            const blogPost = `
+              <article class="bg-gray-800 p-6 rounded-lg">
+                <h2 class="text-2xl font-bold mb-2">Blog Post ${index + 1}</h2>
+                <p class="text-base">${post.replace(/\n/g, '<br>')}</p>
+              </article>
+            `;
+            $('#blog-posts').append(blogPost);
+          });
+        },
+        error: function(error) {
+          console.error('Error fetching blog posts:', error);
+        }
+      });
     });
-  });
-</script>
-
+  </script>
 </body>
 </html>
