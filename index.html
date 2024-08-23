@@ -1,298 +1,735 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-content="width=device-width, initial-scale=0.9, maximum-scale=1.0, user-scalable=0">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tech Tantra AI Technologies Company</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script>
-  (function (s, e, n, d, er) {
-    s['Sender'] = er;
-    s[er] = s[er] || function () {
-      (s[er].q = s[er].q || []).push(arguments)
-    }, s[er].l = 1 * new Date();
-    var a = e.createElement(n),
-        m = e.getElementsByTagName(n)[0];
-    a.async = 1;
-    a.src = d;
-    m.parentNode.insertBefore(a, m)
-  })(window, document, 'script', 'https://cdn.sender.net/accounts_resources/universal.js', 'sender');
-  sender('f75cd656853008')
-</script>
-</head>
-<style>  @keyframes gradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TTATC | tech tantra ai technologies company</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
-
-.app-banner::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
-  animation: rotate 20s linear infinite;
-}
-
-@keyframes rotate {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-.app-icon {
-  width: 100px;
-  height: 100px;
-  background-image: url('https://i.ibb.co/542BxDF/icon.webp');
-  border-radius: 25px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 50px;
-  margin-bottom: 20px;
-  backdrop-filter: blur(5px);
-  transition: all 0.3s ease;
-  background-size: cover;
-  background-position: center;
-}
-
-.app-icon:hover {
-  transform: scale(1.1);
-}
-
-.app-name {
-  font-size: 32px;
-  font-weight: 600;
-  margin-bottom: 15px;
-  letter-spacing: 1px;
-}
-
-.app-description {
-  font-size: 16px;
-  font-weight: 300;
-  margin-bottom: 30px;
-  line-height: 1.6;
-}
-
-.download-btn {
-    color: white;
-    border: none;
-    font-weight: 900;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(5px);
-    letter-spacing: 1px;
-    font-size: 15px;
-}
-
-.download-btn:hover {
-  background-color: white;
-  color: #e73c7e;
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}</style>
-<body class="text-white" onload="displayRandomQuickReply()" onfocus="displayRandomQuickReply()">
-
-<div class="blob"></div>
-<div class="backdrop"></div> <!-- Added backdrop -->
-
-<div class="chat-container" id="chat-container">
-  <div class="bg-gray-800 bg-opacity-75 p-4 rounded-lg flex flex-col items-center" id="name-content">
-    
-    <!-- Content for your 'name' div goes here -->
-    <p>TALK WITH US USING OUR AI CUSTOMER SERVERVICE "BHRAM AI".</p>
-  </div>
-  <div class="bhrmlg" id="toggle-chat">
-    <img src="https://i.ibb.co/hMPpR9t/BHRAM.png" alt="Bhram" class="rounded-full h-40 w-40 mb-4" style="
-    position: absolute;
-    z-index: -1;
-    top: 30%;
-    left: 25%;
-    transform: scale(1.5);
-    opacity: 10%;
-    cursor: pointer;
-    ">
-  </div>
-  <div class="messages" id="messages">
-    <div class="message bot-message">
-      <p>Welcome! I am BHRAM AI Chatbot for TTATC official Site :)</p>
-    </div>
-  </div>
-
-  <div class="ai-line" id="loading-line" style="display: none;"></div>
-  <div class="input-container">
-    <input type="text" id="user-input" placeholder="Type your message..." maxlength="1500">
-    <button onclick="sendMessage()">Send</button>
-  </div>
-  <div id="quick-replies">
-    <button onclick="insertQuickReply(this)">I'm having trouble logging in</button>
-    <button onclick="insertQuickReply(this)">What are your business hours?</button>
-    <button onclick="insertQuickReply(this)">latest progress of work?</button>
-    <button onclick="insertQuickReply(this)">Custom Fine tuned ChatBot for my Business</button>
-    <button onclick="insertQuickReply(this)">I want to know more about you</button>
-    <button onclick="insertQuickReply(this)">upcoming projects working on?</button>
-    <button onclick="insertQuickReply(this)">contact to you</button>
-    <button onclick="insertQuickReply(this)">want some custom tools/softwares for my business</button>
-    <!-- Add more quick reply buttons as needed -->
-  </div>
-</div>
-
-<div class="content">
-  <section class="mb-8">
-  <div class="app-banner">
-    <div class="app-icon"></div>
-    <div class="app-name">Vidilyzer</div>
-    <div class="app-description">Get concise summaries and chat with the AI on your favorite YouTube videos</div>
-    <a href="https://vidilyzer.techtantra.tech" class="download-btn">Try Vidilyzer Extension</a>
-  </div>
-</section>
-
-  <section class="mb-8">
-    <h1 class="text-4xl font-bold mb-4 text-white">Tech Tantra AI Technologies Company</h1>
-    <p class="text-lg text-white">Empowering businesses and individuals with AI for AI</p>
-  </section>
-
-  <section class="mb-8">
-    <h2 class="text-2xl font-bold mb-4 text-white">Know Us</h2>
-    <p class="text-lg text-white">Tech Tantra AI Technologies Company, also known as TTATC, is truly made in Bharat and made for Bharatiyas. We do not rely on third-party outsider APIs from different countries. We care about your privacy and value your trust, striving to provide worthy products. Our development and background work started in August 2023.</p>
-  </section>
-
-  <section class="mb-8">
-    <h2 class="text-2xl font-bold mb-4 text-white">We work on</h2>
-    <ul class="list-disc list-inside text-lg text-white" style="
-    text-align: left;
-
-">
-
-      <li>Build Own AI Apps</li>
-      <li>Research about new Ideas</li>
-      <li>Custom Businesses Solutions with/without AI.</li>
-      <li>No rely on third party API for our AI Apps</li>
-      <li>Fully Customized ChatBot Providing all data is in our India's Server</li>
-    </ul>
-  </section>
-
-  <section id="founders" class="mb-8">
-    <h2 class="text-2xl font-bold mb-4 text-white">Know Me</h2>
-    <div class="bg-gray-800 bg-opacity-75 p-4 rounded-lg flex flex-col items-center">
-      <img src="https://i.ibb.co/GVWQ2G5/1px.png" alt="Founder" class="rounded-full h-40 w-40 mb-4">
-      <h3 class="text-2xl font-bold mb-2 text-white">Subham Mukherjee</h3>
-      <p class="text-lg text-white">Founder & CEO</p>
-      <p class="text-lg text-white">
-        Hello, I'm Subham Mukherjee, the Founder & CEO of Tech Tantra AI Technologies. My passion for technology and AI drives me to create innovative solutions for businesses and individuals.
-      </p>
-      <p class="text-lg text-white">
-        With a strong background in software development and AI, I have mastered tools like Unreal Engine and video motion capture technology. My journey includes a three-month internship at Cosmos Maya and roles as a video editor at two startups, which provided valuable insights into startup operations.
-      </p>
-      <p class="text-lg text-white">
-        Recognizing the transformative potential of AI, I leveraged my technical and entrepreneurial skills to create Tech Tantra AI Technologies. Our mission is to drive innovation and efficiency through AI solutions.
-      </p>
-      <p class="text-lg text-white">
-        My tech journey began early, building PCs and creating DIY electronics projects. Even without home internet, I fueled my learning through coding videos and software from cybercafés.
-      </p>
-      <p class="text-lg text-white">
-        Connect with me on <a href="https://www.linkedin.com" class="text-blue-400">LinkedIn</a> or follow me on <a href="https://www.twitter.com" class="text-blue-400">Twitter</a>.
-      </p>
-    </div>
-  </section>
-
-  <section class="mb-8">
-    <h2 class="text-2xl font-bold mb-4 text-white">Featured Projects</h2>
-    <div class="grid grid-cols-1 gap-4">
-      <div class="bg-gray-800 bg-opacity-75 bg-opacity-75 p-4 rounded-lg">
-        <h3 class="text-xl font-bold mb-2 text-white">Project AI2Business</h3>
-        <p class="text-lg text-white">Custom Fine-Tuned AI ChatBot for customer support, copywriting, and email writing.</p>
-      </div>
-      <div class="bg-gray-800 bg-opacity-75 p-4 rounded-lg">
-        <h3 class="text-xl font-bold mb-2 text-white">Project CustomTools</h3>
-        <p class="text-lg text-white">Fully custom tools: AI-based or without AI tools for businesses.</p>
-      </div>
-      <div class="bg-gray-800 bg-opacity-75 p-4 rounded-lg">
-        <h3 class="text-xl font-bold mb-2 text-white">Project AI2Customer</h3>
-        <p class="text-lg text-white">Work in Progress: A fully AI-based complete health dietitian solution with extensive features.</p>
-      </div>
-      <div class="bg-gray-800 bg-opacity-75 p-4 rounded-lg">
-        <h3 class="text-xl font-bold mb-2 text-white">Project AIniversal (ai for universal)</h3>
-        <p class="text-lg text-white">R&D in Progress: An AI office where you will be the boss of many AI employees—no absenteeism, lower expenses, and no payments required.</p>
-        <p>this can be start of the game-changer.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="mb-8">
-    <h2 class="text-2xl font-bold mb-4 text-white">Testimonials</h2>
-    <div class="grid grid-cols-1 gap-4">
-      <div class="bg-gray-800 p-4 rounded-lg">
-        <p class="text-lg text-white">"Tech Tantra AI Technologies provided exceptional AI consulting. Their insights transformed our approach to data analytics."</p>
-        <p class="text-lg text-white">- Client A</p>
-      </div>
-      <div class="bg-gray-800 p-4 rounded-lg">
-        <p class="text-lg text-white">"Working with Tech Tantra AI Technologies was a game-changer for our startup. Their expertise in LLMs helped us achieve significant cost savings."</p>
-        <p class="text-lg text-white">- Client B</p>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2 class="text-2xl font-bold mb-4 text-white">Contact Us</h2>
-    <p class="text-lg text-white">Email: admin@techtantra.com</p>
-    <p class="text-lg text-white">Phone: +91 9073888611</p>
-  </section>
-</div>
-
-<script src="script.js"></script>
-<script>
-
-
-  document.addEventListener('DOMContentLoaded', function() {
-  const chatContainer = document.getElementById('chat-container');
-  const nameContent = document.getElementById('name-content');
-  const toggleChat = document.getElementById('toggle-chat');
-  let isExpanded = false;
-
-  // Function to toggle chat container visibility
-  function toggleChatContainer() {
-    isExpanded = !isExpanded;
-    chatContainer.classList.toggle('expanded', isExpanded);
-    nameContent.style.display = isExpanded ? 'none' : 'block'; // Hide name when chat is expanded
-  }
-
-  // Event listener for toggle-chat
-  if (toggleChat) {
-    toggleChat.addEventListener('click', function(e) {
-      e.stopPropagation(); // Prevents document click event from immediately closing
-      toggleChatContainer();
-    });
-  }
-
-  // Event listener for name-content
-  if (nameContent) {
-    nameContent.addEventListener('click', function(e) {
-      e.stopPropagation(); // Prevents document click event from immediately closing
-      toggleChatContainer();
-    });
-  }
-
-  // Event listener to close chat container when clicking outside
-  document.body.addEventListener('click', function(e) {
-    if (isExpanded && e.target !== toggleChat && e.target !== nameContent && !chatContainer.contains(e.target)) {
-      toggleChatContainer();
+    :root {
+        --primary-color: #00ffff;
+        --secondary-color: #ff00ff;
+        --bg-color: #121212;
+        --text-color: #e0e0e0;
+        --header-bg: rgba(18, 18, 18, 0.9);
+        --card-bg: #1e1e1e;
     }
-  });
 
-  // Show name-content initially when chat is minimized
-  nameContent.style.display = 'block';
-});
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
 
+    body, html {
+        font-family: 'Poppins', sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        line-height: 1.6;
+        overflow-x: hidden;
+        height: 100%;
+    }
+
+    .parallax-container {
+        height: 100vh;
+        overflow-x: hidden;
+        overflow-y: auto;
+        perspective: 1px;
+    }
+
+    .parallax-layer {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+    .parallax-bg {
+        transform: translateZ(-1px) scale(2);
+        background-image: url('https://source.unsplash.com/random/1920x1080?technology,dark');
+        background-size: cover;
+        background-position: center;
+        z-index: -1;
+    }
+
+    .content {
+        transform: translateZ(0);
+        position: relative;
+        background-color: rgba(18, 18, 18, 0.8);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    header {
+        background-color: var(--header-bg);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+    }
+
+    .logo {
+        font-size: 24px;
+        font-weight: 700;
+        color: var(--primary-color);
+        text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    }
+
+    .nav-links {
+        display: flex;
+        list-style: none;
+    }
+
+    .nav-links li {
+        margin-left: 30px;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: var(--text-color);
+        font-weight: 600;
+        transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+        color: var(--primary-color);
+        text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    }
+
+    .hero {
+        background: linear-gradient(135deg, rgba(0, 255, 255, 0.1), rgba(255, 0, 255, 0.1));
+        color: white;
+        text-align: center;
+        padding: 150px 0 100px;
+        margin-bottom: 80px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+        text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+    }
+
+    .hero p {
+        font-size: 20px;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .projects {
+        padding: 80px 0;
+    }
+
+    .projects h2 {
+        text-align: center;
+        font-size: 36px;
+        margin-bottom: 50px;
+        color: var(--primary-color);
+        text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    }
+
+    .project-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
+
+    .project-card {
+        background: var(--card-bg);
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 20px rgba(0, 255, 255, 0.2);
+    }
+
+    .project-image {
+        height: 200px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .project-info {
+        padding: 20px;
+    }
+
+    .project-info h3 {
+        font-size: 24px;
+        margin-bottom: 10px;
+        color: var(--primary-color);
+    }
+
+    .project-info p {
+        font-size: 14px;
+        color: #a0a0a0;
+    }
+
+    #project-details {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 2000;
+    }
+
+    #project-details.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .detail-content {
+        background: var(--card-bg);
+        border-radius: 8px;
+        padding: 40px;
+        max-width: 600px;
+        position: relative;
+        box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+    }
+
+    #close-details {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        color: var(--text-color);
+    }
+
+    #detail-title {
+        font-size: 28px;
+        margin-bottom: 20px;
+        color: var(--primary-color);
+        text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    }
+
+    #detail-description {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+        .hero h1 {
+            font-size: 36px;
+        }
+        .hero p {
+            font-size: 18px;
+        }
+        .projects h2 {
+            font-size: 28px;
+        }
+    }
+    .chat-container {
+        position: fixed;
+        top: 3%;
+        right: -50%;
+        width: 50%;
+        min-height: 55%;
+        background-color: rgba(18, 18, 18, 0.8);
+        backdrop-filter: blur(10px);
+        transition: right 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        display: flex;
+        flex-direction: column;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+        border-left: 2px solid #4a4a4a;
+        z-index: 100;
+
+    }
+    .chat-container.open {
+        right: 0;
+    }
+    .chat-header {
+        background: rgba(30, 30, 30, 0.9);
+        color: #e0e0e0;
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 2px solid #4a4a4a;
+    }
+    .chat-header h2 {
+        margin: 0;
+        font-size: 1.5em;
+        letter-spacing: 1px;
+        font-weight: 300;
+    }
+    .chat-messages {
+        flex-grow: 1;
+        overflow-y: auto;
+        padding: 20px;
+        background: rgba(24, 24, 24, 0.6);
+    }
+    .chat-input {
+        display: flex;
+        padding: 15px;
+        background-color: rgba(30, 30, 30, 0.9);
+        border-top: 2px solid #4a4a4a;
+    }
+    .chat-input input {
+        flex-grow: 1;
+        padding: 12px;
+        background-color: rgba(60, 60, 60, 0.6);
+        border: 2px solid #4a4a4a;
+        border-radius: 25px;
+        font-size: 16px;
+        color: #e0e0e0;
+        transition: all 0.3s ease;
+    }
+    .chat-input input:focus {
+        outline: none;
+        box-shadow: 0 0 10px rgba(74, 74, 74, 0.5);
+        background-color: rgba(80, 80, 80, 0.8);
+    }
+    .chat-input button {
+        padding: 12px 25px;
+        background: linear-gradient(90deg, #4a4a4a 0%, #2a2a2a 100%);
+        color: #e0e0e0;
+        border: none;
+        border-radius: 25px;
+        margin-left: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: 400;
+    }
+    .chat-input button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        background: linear-gradient(90deg, #5a5a5a 0%, #3a3a3a 100%);
+    }
+    .toggle-btn, .close-btn {
+        background: rgba(30, 30, 30, 0.8);
+        color: #e0e0e0;
+        border: 2px solid #4a4a4a;
+        padding: 12px 20px;
+        cursor: pointer;
+        border-radius: 25px;
+        font-weight: 400;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+.toggle-btn {
+    position: fixed;
+    left: -20px;
+    top: 35%; /* Adjust this value based on where you want the button vertically */
+
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+    .toggle-btn:hover, .close-btn:hover {
+        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        background: rgba(82, 81, 81, 0.9);
+    }
+
+    .toggle-btn:hover {
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    animation: rgbBorderGlow 3s linear infinite;
+}
+.toggle-btn::after, .close-btn::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+
+    z-index: -1;
+    filter: blur(5px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.toggle-btn:hover::after, .close-btn:hover::after {
+    opacity: 1;
+}
+.about-content, .contact-content {
+
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #1e1e1e;
+            border: 2px solid transparent;
+        }
+        .contact-form button {
+
+            color: #222222;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            background-color: white;
+        }
+        .contact-form button:hover {
+            background: rgb(59, 59, 59);
+            color: white;
+        }
+@keyframes rgbBorderGlow {
+    0% {
+        box-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 15px #ff0000;
+    }
+    33% {
+        box-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00;
+    }
+    66% {
+        box-shadow: 0 0 5px #0000ff, 0 0 10px #0000ff, 0 0 15px #0000ff;
+    }
+    100% {
+        box-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 15px #ff0000;
+    }
+}
+    .message {
+        background-color: rgba(40, 40, 40, 0.8);
+        border-radius: 15px;
+        padding: 10px 15px;
+        margin-bottom: 10px;
+        max-width: 80%;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    .message.user {
+        align-self: flex-end;
+        background-color: rgba(74, 74, 74, 0.8);
+        color: #e0e0e0;
+    }
+    .message.bot {
+        align-self: flex-start;
+        background-color: rgba(60, 60, 60, 0.8);
+    }
+    .info-panel {
+        position: fixed;
+        top: 75px;
+        z-index: 99999;
+        left: -300px;
+        width: 250px;
+        background-color: rgba(18, 18, 18, 0.8);
+        backdrop-filter: blur(10px);
+        padding: 20px;
+        border-radius: 0 10px 10px 0;
+        box-shadow: 5px 0 15px rgba(0,0,0,0.2);
+        transition: left 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        color: #e0e0e0;
+    }
+    .info-panel.open {
+        left: 0;
+        
+    }
+    .info-panel h2 {
+        font-size: 1.2em;
+        margin-top: 0;
+        font-weight: 300;
+    }
+    .info-panel p {
+        font-size: 0.9em;
+    }
+    .info-panel ul {
+        padding-left: 20px;
+        font-size: 0.9em;
+    }
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+        background: rgba(30, 30, 30, 0.6);
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #4a4a4a;
+        border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #5a5a5a;
+    }
+</style>
+</head>
+<body>
+    <header>
+
+        <nav class="container">
+            <div class="logo">
+                <img src="https://i.ibb.co/ZBNCYJk/ttntra.png" alt="TTATC Logo" style="height: 50px; width: auto;">
+                <span>TTATC</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="chat-container" id="chatContainer">
+        <div class="chat-header">
+            <h2>AI Assistant</h2>
+            <button class="close-btn" onclick="toggleElements()">Close</button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <!-- Messages will be added here dynamically -->
+        </div>
+        <div class="chat-input">
+            <input type="text" id="userInput" placeholder="Ask me anything...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <div class="info-panel" id="infoPanel">
+        <h2>BHRAM Features</h2>
+        <ul>
+            <li>Language Processing</li>
+            <li>To send a request direct us, start your question with "q:" (e. q: what is the price of a custom AI app for ABC Business)</li>
+            <li>Brand Info</li>
+            <li>Available 24/7</li>
+            <li>Multi-language Support</li>
+        </ul>
+        <p>Ask a question to begin!</p>
+    </div>
+    
+    <button class="toggle-btn" id="toggleBtn" onclick="toggleElements()">CHAT WITH BHRAM AI</button>
+    <div class="parallax-container">
+        <div class="parallax-layer parallax-bg"></div>
+        <div class="parallax-layer content">
+
+
+        
+            <section id="home" class="hero">
+                <div class="container">
+                    <h1>Tech Tantra AI Technologies Company</h1>
+                    <p>AI FOR ALL</p>
+                </div>
+            </section>
+
+            <section id="projects" class="projects">
+                <div class="container">
+                    <h2>Our Flagship Projects</h2>
+                    <div class="project-grid">
+                        <div class="project-card" data-project="biai">
+                            <div class="project-image" style="background-image: url('https://i.ibb.co/SP1WkF9/biai.png')"></div>
+                            <div class="project-info">
+                                <h3>BiAi</h3>
+                                <p>Revolutionary AI resume analyzer</p>
+                            </div>
+                        </div>
+                        <div class="project-card" data-project="ai">
+                            <div class="project-image" style="background-image: url('https://i.ibb.co/kqQ558W/elev.png')"></div>
+                            <div class="project-info">
+                                <h3>ELEVAI</h3>
+                                <p>Advanced AI agents for complex problem-solving</p>
+                            </div>
+                        </div>
+                        <div class="project-card" data-project="bob">
+                            <div class="project-image" style="background-image: url('https://i.ibb.co/mDf3fFy/bob.png')"></div>
+                            <div class="project-info">
+                                <h3>BOB</h3>
+                                <p>Cutting-edge ai bot building platform. no code, no node</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+    <div id="project-details">
+        <div class="detail-content">
+            <button id="close-details">&times;</button>
+            <h2 id="detail-title"></h2>
+            <p id="detail-description"></p>
+        </div>
+    </div>
+    <section id="About">
+        <div class="about-content">
+            <h1>About Us</h1>
+            <p>Welcome to Tech Tantra AI Technologies Company. We are dedicated to Bring AI for humanity and for every possible Industries.</p>
+            <p>Founded in Aug-2023, right now, team of 1 professionals works tirelessly to research and develop cutting edge AI solutions. </p>
+            <p>Our core values include:</p>
+            <ul>
+                <li>Keep our customers happy and satisfied.</li>
+                <li>Value our customers feedback and money.</li>
+                <li>No ThirdParty API Interference. For Privacy and Security.</li>
+                <li>easy to use and full unlocked potential of AI Solutions.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="Contact">
+        <div class="contact-content" style="text-align: center;">
+            <h1>Contact Us</h1>
+            <p>We'd love to hear from you. Please use the form below to get in touch.</p>
+            <div class="contact-info">
+                <p>Email: we@techtantra.tech</p>
+                <p>Phone: (+91) 90738-88611</p>
+                <p>Address: 290 Dum Dum Park, Kolkata, WestBengal, 700055</p>
+            </div>
+        </div>
+    </section>
+</div>
+</div>
+<script>
+    const projectDetails = {
+        biai: {
+            title: "BIAI",
+            description: "The BIAI is an advanced artificial intelligence system designed to analyze user CV(resume) and extract relevant information for a job posting. The BIAI is train by own using realtime resumes and realtime job postings from the Internet (google). It then uses the extracted data to train a neural network that can recognize patterns in user input and generate an optimal solution based on the given constraints."
+        },
+        ai: {
+            title: "ELEVAI",
+            description: "ELEVAI is our advanced artificial intelligence system designed to automate the most complex problems facing humanity. By mimicking the neural networks of the human brain, this AI can process vast amounts of data, recognize intricate patterns, and generate innovative solutions across various domains, from climate change mitigation to optimizing global supply chains. (UNDER DEVELOPEMENT)"
+        },
+        bob: {
+            title: "BOB Platform",
+            description: "The BOB Platform where businesses or individuals can build own custom data given LLM chat bot and can deploy it on there Site or can use for own internal usage. (UNDER PROTOTYPE)"
+        }
+    };
+
+    const projectDetailsElement = document.getElementById('project-details');
+    const detailTitle = document.getElementById('detail-title');
+    const detailDescription = document.getElementById('detail-description');
+    const closeButton = document.getElementById('close-details');
+
+    document.querySelectorAll('.project-card').forEach(project => {
+        project.addEventListener('click', () => {
+            const projectType = project.getAttribute('data-project');
+            const details = projectDetails[projectType];
+            detailTitle.textContent = details.title;
+            detailDescription.textContent = details.description;
+            projectDetailsElement.classList.add('active');
+        });
+    });
+
+    closeButton.addEventListener('click', () => {
+        projectDetailsElement.classList.remove('active');
+    });
+
+    document.addEventListener('click', (event) => {
+        if (projectDetailsElement.classList.contains('active') && !event.target.closest('.detail-content') && !event.target.closest('.project-card')) {
+            projectDetailsElement.classList.remove('active');
+        }
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Intersection Observer for fade-in effect
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = 1;
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.project-card').forEach(card => {
+        card.style.opacity = 0;
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'opacity 0.5s, transform 0.5s';
+        observer.observe(card);
+    });
+
+    // Parallax effect
+    window.addEventListener('scroll', () => {
+        const parallaxBg = document.querySelector('.parallax-bg');
+        const scrollPosition = window.pageYOffset;
+        parallaxBg.style.transform = `translateY(${scrollPosition * 0.5}px)`;
+    });
 </script>
-</body>
-</html>
+<script>
+    async function sendMessage() {
+        const userInput = document.getElementById('userInput');
+        const message = userInput.value.trim();
+        if (message) {
+            addMessage('You', message, 'user');
+            userInput.value = '';
+
+            let userId = localStorage.getItem('user_id');
+            if (!userId) {
+                userId = uuidv4();
+                localStorage.setItem('user_id', userId);
+            }
+
+            try {
+                const response = await fetch('https://clean-rodent-stable.ngrok-free.app/ask', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        question: message,
+                        user_id: userId,
+                    }),
+                });
+
+                const data = await response.json();
+                const botResponse = data.answer;
+
+                addMessage('AI', botResponse, 'bot');
+            } catch (error) {
+                console.error('Error:', error);
+                addMessage('AI', 'Sorry, there was an error processing your request.', 'bot');
+            }
+        }
+    }
+
+    function uuidv4() {
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+            var r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
+            return v.toString(16);
+        });
+    }
+
+    function addMessage(sender, text, type) {
+        const messageContainer = document.createElement('div');
+        messageContainer.classList.add('message', type);
+        messageContainer.innerHTML = `<strong>${sender}:</strong> ${text}`;
+        document.getElementById('chatMessages').appendChild(messageContainer);
+        document.getElementById('chatMessages').scrollTop = document.getElementById('chatMessages').scrollHeight;
+    }
+
+    function toggleElements() {
+        const chatContainer = document.getElementById('chatContainer');
+        const infoPanel = document.getElementById('infoPanel');
+        chatContainer.classList.toggle('open');
+        infoPanel.classList.toggle('open');
+    }
+
+    document.getElementById('userInput').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            sendMessage();
+        }
+    });
+
+    setTimeout(() => {
+        addMessage('AI', "Greetings, human. I am BHRAM your AI assistant, ready to process your inquiries. How may I be of service? i can solve any query or issue or requests regarding TTATC our Brand", 'bot');
+    }, 500);
+</script>
