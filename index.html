@@ -1,9 +1,8 @@
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="description" content="An AI based Tech Startup Tool--Made in India">
 <meta name="keywords" content="AI India, indian AI startups, AI Agents, AI resume analysis, AI resume analysis tool, ElevAI agents, AI resume analysis website, AI resume analysis app, AI resume analysis software, made in India, made in Bharat">
-<link rel="icon" href="favicon.ico" type="image/x-icon">
 <title>TTATC | tech tantra ai technologies company</title>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
@@ -338,7 +337,7 @@
 .toggle-btn {
     position: fixed;
     left: -20px;
-    top: 35%; /* Adjust this value based on where you want the button vertically */
+    top: 45%; /* Adjust this value based on where you want the button vertically */
 
     z-index: 1000;
     transition: all 0.3s ease;
@@ -470,6 +469,123 @@
     ::-webkit-scrollbar-thumb:hover {
         background: #5a5a5a;
     }
+    .hamburger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger-menu span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color);
+    margin: 3px 0;
+}
+
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: flex;
+        left: -165px;
+        position: relative;
+    }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }    .container {
+        padding: 0 10px;
+    }
+
+    header {
+        position: static;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .hero {
+        padding: 50px 0;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .projects h2 {
+        font-size: 24px;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        margin-bottom: 20px;
+    }
+
+    .chat-container {
+        width: 100%;
+        right: -100%;
+        top: 300px;
+    }
+
+    .chat-container.open {
+        right: 0;
+    }
+
+    .info-panel {
+        width: 100%;
+        left: -100%;
+        border-radius: 0;
+        top: 30px;
+    }
+
+    .info-panel.open {
+        left: 0;
+    }
+
+    .toggle-btn {
+        left: 10px;
+        top: auto;
+        bottom: 20px;
+        z-index: 1001;
+    }
+
+    .about-content, .contact-content {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .detail-content {
+        width: 90%;
+        max-width: none;
+        padding: 20px;
+    }
+
+}
 </style>
 </head>
 <body>
@@ -479,6 +595,11 @@
             <div class="logo">
                 <img src="https://i.ibb.co/ZBNCYJk/ttntra.png" alt="TTATC Logo" style="height: 50px; width: auto;">
                 <span>TTATC</span>
+            </div>
+            <div class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
@@ -566,7 +687,7 @@
         </div>
     </div>
     <section id="About">
-                <div class="about-content" style="width: 80%;
+        <div class="about-content" style="            width: 80%;
         margin: auto;
         overflow: hidden;
         padding: 20px;
@@ -585,8 +706,7 @@
     </section>
 
     <section id="Contact">
-    <section id="Contact">
-        <div class="contact-content" style="width: 80%;
+        <div class="contact-content" style="            width: 80%;
         margin: auto;
         overflow: hidden;
         padding: 20px;
@@ -617,7 +737,9 @@
             description: "The BOB Platform where businesses or individuals can build own custom data given LLM chat bot and can deploy it on there Site or can use for own internal usage. (UNDER PROTOTYPE)"
         }
     };
-
+    document.querySelector('.hamburger-menu').addEventListener('click', function() {
+    document.querySelector('.nav-links').classList.toggle('active');
+});
     const projectDetailsElement = document.getElementById('project-details');
     const detailTitle = document.getElementById('detail-title');
     const detailDescription = document.getElementById('detail-description');
